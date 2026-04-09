@@ -932,15 +932,6 @@ img {
   background: #09552b;
 }
 
-.secondary-btn {
-  background: white;
-  color: #1f2937;
-  border-color: #d1d5db;
-}
-
-.secondary-btn:hover {
-  background: #f8fafc;
-}
 
 .danger-btn {
   background: white;
@@ -973,7 +964,6 @@ img {
   }
 
   .primary-btn,
-  .secondary-btn,
   .danger-btn {
     width: 100%;
   }
