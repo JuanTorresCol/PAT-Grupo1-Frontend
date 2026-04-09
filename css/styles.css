@@ -576,6 +576,14 @@ img {
   background: #6ea32f;
 }
 
+.btn-secondary {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
 @media (max-width: 900px) {
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -658,6 +666,7 @@ img {
   padding: 50px 0 70px;
 }
 
+
 .reservas-filtros {
   display: flex;
   gap: 16px;
@@ -667,11 +676,23 @@ img {
 
 .reservas-filtros input {
   width: 320px;
-  height: 42px;
+  height: 52px;
   padding: 0 16px;
   border: 1px solid #d1d5db;
   border-radius: 12px;
   font-size: 18px;
+}
+
+.buscar-btn {
+  height: 52px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 12px;
+  background-color: #8cc63f;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .reservas-tabla {
@@ -806,7 +827,15 @@ img {
   margin-bottom: 18px;
 }
 
-
+.detalle-alert {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
 
 .detalle-lista {
   border-top: 1px solid #e5e7eb;
@@ -888,6 +917,15 @@ img {
   margin-bottom: 18px;
 }
 
+.detalle-info-box {
+  background: #eef5ff;
+  border: 1px solid #cfe0ff;
+  color: #3b82f6;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
 .detalle-textarea {
   min-height: 110px;
   resize: none;
@@ -910,6 +948,7 @@ img {
 }
 
 .primary-btn,
+.secondary-btn,
 .danger-btn {
   display: inline-flex;
   align-items: center;
@@ -931,6 +970,15 @@ img {
   background: #09552b;
 }
 
+.secondary-btn {
+  background: white;
+  color: #1f2937;
+  border-color: #d1d5db;
+}
+
+.secondary-btn:hover {
+  background: #f8fafc;
+}
 
 .danger-btn {
   background: white;
@@ -963,6 +1011,7 @@ img {
   }
 
   .primary-btn,
+  .secondary-btn,
   .danger-btn {
     width: 100%;
   }
