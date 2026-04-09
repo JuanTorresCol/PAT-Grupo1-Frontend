@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Reservas | AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+ <body>
+    
+        <header class = "header">
+            <div class="container nav">
+                <div class="logo">
+                    <img class = "logo" src = "assets/img/LogoPadel.png">
+                    ATILANOPADEL
+                </div>
+
+                <nav class="menu">
+                    <a class = "menu-item" href="home.html">INICIO</a>
+                    <a class = "menu-item" href="pistas.html">PISTAS</a>
+                    <a class = "menu-item" href="reservas.html">RESERVAS</a>
+                    <a class = "menu-item" href="perfil.html">PERFIL</a>
+                </nav>
+            </div>
+        </header>
+        
+  <main class="container reservas-page">
+
+  <section class="hero">
+    <h1>Mis reservas</h1>
+    <p>Consulta todas tus reservas, tanto las próximas como tu historial.</p>
+  </section>
+
+  <section class="reservas-filtros">
+    <input type="text" placeholder="Buscar por ID de reserva">
+    <button class="buscar-btn">Buscar</button>
+  </section>
+
+  <section class="reservas-tabla">
+    <table>
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Pista</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Duración</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr onclick="window.location='viewReserva.html'">
+          <td><strong>#1248</strong></td>
+          <td>Pista 1</td>
+          <td>12/06/2026</td>
+          <td>18:00</td>
+          <td>90 min</td>
+          <td><span class="estado confirmada">Confirmada</span></td>
+        </tr>
+
+        <tr onclick="window.location='viewReserva.html'">
+          <td><strong>#2247</strong></td>
+          <td>Pista 3</td>
+          <td>12/02/2026</td>
+          <td>20:00</td>
+          <td>60 min</td>
+          <td><span class="estado pasada">Pasada</span></td>
+        </tr>
+
+        <tr onclick="window.location='viewReserva.html'" >
+          <td><strong>#7788</strong></td>
+          <td>Pista 2</td>
+          <td>15/06/2026</td>
+          <td>19:30</td>
+          <td>90 min</td>
+          <td><span class="estado confirmada">Confirmada</span></td>
+        </tr>
+
+        <tr onclick="window.location='viewReserva.html'" >
+          <td><strong>#6666</strong></td>
+          <td>Pista 4</td>
+          <td>09/06/2026</td>
+          <td>18:00</td>
+          <td>120 min</td>
+          <td><span class="estado confirmada">Confirmada</span></td>
+        </tr>
+
+        <tr onclick="window.location='viewReserva.html'" >
+          <td><strong>#6527</strong></td>
+          <td>Pista 1</td>
+          <td>12/03/2026</td>
+          <td>21:00</td>
+          <td>60 min</td>
+          <td><span class="estado pasada">Pasada</span></td>
+        </tr>
+
+        <tr onclick="window.location='viewReserva.html'" >
+          <td><strong>#4252</strong></td>
+            <td>Pista 5</td>
+          <td>22/05/2026</td>
+          <td>17:30</td>
+          <td>90 min</td>
+          <td><span class="estado cancelada">Cancelada</span></td>
+        </tr>
+
+        <tr onclick="window.location='viewReserva.html'" >
+          <td><strong>#1242</strong></td>
+         <td>Pista 6</td>
+          <td>01/06/2026</td>
+          <td>19:00</td>
+          <td>60 min</td>
+          <td><span class="estado cancelada">Cancelada</span></td>
+        </tr>
+
+        <tr onclick="window.location='viewReserva.html'" >
+          <td><strong>#3452</strong></td>
+         <td>Pista 2</td>
+          <td>25/03/2026</td>
+          <td>18:30</td>
+          <td>90 min</td>
+          <td><span class="estado pasada">Pasada</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+   <div class="paginacion">
+
+  <a href="reservas.html" class="pag-btn anterior">
+    ← Anterior
+  </a>
+  <span class="pag-num active">1</span>
+  <a href="reservas.html" class="pag-btn siguiente">
+    Siguiente →
+  </a>
+
+    </div>
+
+</main>
+    <footer class = "footer">
+        <div class = "container footer">
+            <p class="foot-note">Muchas gracias por usar nuestro servicio!</p><br>
+            <p class="foot-note">Si está sufriendo dificultades técnicas y requiere de soporte no dude en contactarnos a través del número:</p><br>
+            <p class = "foot-note"><strong>+34 914586011</strong></p><br>
+            <p class = "foot-note">AtilanoPadel ©</p>
+        </div>
+    </footer>
+</body>
+</html>

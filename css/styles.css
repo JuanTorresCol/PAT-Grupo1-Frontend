@@ -490,9 +490,13 @@ img {
 }
 
 .hero-home {
-  background: linear-gradient(to right, rgba(232,245,233,0.95), rgba(232,245,233,0.7)),
-              url("assets/img/hero-padel.png") no-repeat center/cover;
-  padding: 80px 0;
+  
+  background-image:  linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),url("../assets/img/hero-padel.png");
+  background-size: cover;       
+  background-position: center; 
+  background-repeat: no-repeat;
+
+  padding: 120px 0;            
 }
 
 .hero-content {
@@ -653,5 +657,498 @@ img {
 
   .hero h1 {
     font-size: 2rem;
+  }
+}
+
+
+/*reservas.html*/
+ .reservas-page {
+  padding: 50px 0 70px;
+}
+
+.reservas-filtros {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 30px 0 24px;
+}
+
+.reservas-filtros input {
+  width: 320px;
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+.reservas-tabla {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  margin-top: 24px;
+}
+
+.reservas-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.reservas-tabla col {
+  width: 16.66%;
+}
+
+.reservas-tabla th {
+  background-color: #f9fafb;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 16px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.reservas-tabla td {
+  padding: 14px 16px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 16px;
+  color: #1f2937;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.reservas-tabla tbody tr {
+  height: 60px;
+}
+
+.reservas-tabla tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.estado {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.confirmada {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.pasada {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.cancelada {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.pag-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pag-btn:hover {
+  background: #f9fafb;
+}
+
+.pag-num {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #0b5a2b;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
+/* viewReserva.html */
+/* detalleReserva.html */
+
+.detalle-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.detalle-sidebar,
+.detalle-form-card {
+  padding: 20px;
+}
+
+.detalle-badge {
+  margin-bottom: 18px;
+}
+
+
+
+.detalle-lista {
+  border-top: 1px solid #e5e7eb;
+}
+
+.detalle-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e5e7eb;
+  align-items: start;
+}
+
+.detalle-label {
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.detalle-value {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.detalle-value-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detalle-value-block strong {
+  color: #1f2937;
+}
+
+.detalle-value-block small {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.detalle-form-header {
+  margin-bottom: 20px;
+}
+
+.detalle-form-header h2 {
+  font-size: 1.8rem;
+  color: #1f2937;
+}
+
+.detalle-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.detalle-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detalle-field label {
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.fake-input,
+.detalle-textarea {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #dbe1e8;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  color: #475569;
+}
+
+.detalle-field-full {
+  margin-bottom: 18px;
+}
+
+.detalle-textarea {
+  min-height: 110px;
+  resize: none;
+  font-family: Arial, sans-serif;
+}
+
+.contador-notas {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-top: 6px;
+}
+
+.detalle-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn,
+.danger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #0b6b36;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #09552b;
+}
+
+.secondary-btn {
+  background: white;
+  color: #1f2937;
+  border-color: #d1d5db;
+}
+
+.secondary-btn:hover {
+  background: #f8fafc;
+}
+
+.danger-btn {
+  background: white;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.danger-btn:hover {
+  background: #fef2f2;
+}
+
+@media (max-width: 900px) {
+  .detalle-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detalle-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .detalle-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .detalle-actions {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .danger-btn {
+    width: 100%;
+  }
+}
+
+
+/* reservaConfirmada.html / reservaCancelada.html */
+.reserva-result {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.result-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.success-icon {
+  background: #eef6ee;
+  color: #28a745;
+}
+
+.reserva-result h1 {
+  font-size: 2.4rem;
+  color: #0b4a2b;
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+
+.result-subtitle {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.result-id-box {
+  background: #eef6ee;
+  border: 1px solid #dbe8dc;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.result-id-box span {
+  display: block;
+  color: #0b4a2b;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.result-id-box strong {
+  font-size: 2rem;
+  color: #0b4a2b;
+  line-height: 1.2;
+}
+
+.result-card {
+  text-align: left;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+.result-card h2 {
+  font-size: 1.45rem;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-row span {
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.result-row strong {
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.result-info-box {
+  background: #eef5ff;
+  border: 1px solid #d7e7ff;
+  color: #3b82f6;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 22px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.result-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.result-actions .primary-btn,
+.result-actions .outline-btn {
+  min-width: 200px;
+  padding: 12px 18px;
+  font-size: 1rem;
+}
+
+.outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid #0b6b36;
+  background: white;
+  color: #0b6b36;
+  font-weight: bold;
+}
+
+.outline-btn:hover {
+  background: #f4faf6;
+}
+
+@media (max-width: 700px) {
+  .reserva-result h1 {
+    font-size: 2rem;
+  }
+
+  .result-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .result-id-box strong {
+    font-size: 1.55rem;
+  }
+
+  .result-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .result-actions {
+    flex-direction: column;
+  }
+
+  .result-actions a {
+    width: 100%;
   }
 }
