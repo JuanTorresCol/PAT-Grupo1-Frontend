@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horarios disponibles | AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img class = "logo" src = "assets/img/LogoPadel.png">
+        ATILANOPADEL
+      </div>
+
+      <nav class="menu">
+        <a class = "menu-item" href="home.html">INICIO</a>
+        <a class = "menu-item" href="pistas.html">PISTAS</a>
+        <a class = "menu-item" href="reservas.html">RESERVAS</a>
+        <a class = "menu-item" href="perfil.html">PERFIL</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <a href="pistas.html" class="back-button">← Volver a todas las pistas</a>
+
+    <section class="hero">
+      <h1>Horarios disponibles</h1>
+      <p>Consulta la disponibilidad, elige la duración y reserva tu pista</p>
+    </section>
+
+    <section class="court-card">
+      <img src="assets/img/pistaPadel1.webp" alt="Pista de pádel">
+      
+      <div class="court-info">
+        <h2>Pista 1</h2>
+        <p class="location">Exterior</p>
+        <p class="price"><strong>12,00 €</strong> / hora</p>
+      </div>
+    </section>
+
+    <section class="date-box">
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" value="2026-05-10">
+    </section>
+
+    <section class="booking-layout">
+
+      <div class="schedule">
+        <div class="schedule-header">
+          <div>
+            <h3>Selecciona una hora de inicio</h3>
+            <p>Horario de 08:00 a 22:00 · Franjas de 30 minutos</p>
+          </div>
+
+          <div class="legend">
+            <span><i class="available"></i> Disponible</span>
+            <span><i class="occupied"></i> Ocupado</span>
+            <span><i class="selected"></i> Seleccionado</span>
+          </div>
+        </div>
+
+        <div class="time-grid">
+          <div class="slot">08:00</div>
+          <div class="slot occupied-slot">08:30</div>
+          <div class="slot">09:00</div>
+          <div class="slot">09:30</div>
+          <div class="slot">10:00</div>
+          <div class="slot">10:30</div>
+          <div class="slot">11:00</div>
+          <div class="slot">11:30</div>
+
+          <div class="slot">12:00</div>
+          <div class="slot">12:30</div>
+          <div class="slot">13:00</div>
+          <div class="slot occupied-slot">13:30</div>
+          <div class="slot">14:00</div>
+          <div class="slot">14:30</div>
+          <div class="slot">15:00</div>
+          <div class="slot">15:30</div>
+
+          <div class="slot">16:00</div>
+          <div class="slot">16:30</div>
+          <div class="slot occupied-slot">17:00</div>
+          <div class="slot">17:30</div>
+          <div class="slot">18:00</div>
+          <div class="slot">18:30</div>
+          <div class="slot selected-slot">19:00</div>
+          <div class="slot selected-range">19:30</div>
+
+          <div class="slot selected-range">20:00</div>
+          <div class="slot selected-range">20:30</div>
+          <div class="slot">21:00</div>
+          <div class="slot occupied-slot">21:30</div>
+          <div class="slot">22:00</div>
+        </div>
+
+        <div class="selection-box">
+          <p><strong>Tu selección:</strong> inicio 19:00 · duración 90 min · fin 20:30</p>
+          <div class="selected-hours">
+            <span>19:00</span>
+            <span>19:30</span>
+            <span>20:00</span>
+            <span>→ 20:30</span>
+          </div>
+        </div>
+
+        <p class="note">Las franjas ocupadas no se pueden seleccionar.</p>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Elige la duración</h3>
+
+          <div class="duration-grid">
+            <div class="duration">30 min<br><small>6,00 €</small></div>
+            <div class="duration">60 min<br><small>12,00 €</small></div>
+            <div class="duration active-duration">90 min<br><small>18,00 €</small></div>
+            <div class="duration">120 min<br><small>24,00 €</small></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Resumen de la reserva</h3>
+
+          <div class="summary-row">
+            <span>Pista:</span>
+            <strong>Pista 1</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Fecha:</span>
+            <strong>10 de mayo de 2026</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Inicio:</span>
+            <strong>19:00</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Duración:</span>
+            <strong>90 minutos</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Fin:</span>
+            <strong>20:30</strong>
+          </div>
+
+          <div class="total">
+            <span>Precio estimado:</span>
+            <strong>18,00 €</strong>
+          </div>
+
+          <a href="pistas.html" class="button">Confirmar reserva</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+    <footer class = "footer">
+        <div class = "container footer">
+            <p class="foot-note">Muchas gracias por usar nuestro servicio!</p><br>
+            <p class="foot-note">Si está sufriendo dificultades técnicas y requiere de soporte no dude en contactarnos a través del número:</p><br>
+            <p class = "foot-note"><strong>+34 914586011</strong></p><br>
+            <p class = "foot-note">AtilanoPadel ©</p>
+        </div>
+    </footer>
+</body>
+</html>
