@@ -576,14 +576,6 @@ img {
   background: #6ea32f;
 }
 
-.btn-secondary {
-  background: white;
-  border: 1px solid #ddd;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
 @media (max-width: 900px) {
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
