@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+ <body>
+    
+        <header class = "header">
+            <div class="container nav">
+                <div class="logo">
+                    <img class = "logo" src = "assets/img/LogoPadel.png">
+                    ATILANOPADEL
+                </div>
+
+                <nav class="menu">
+                    <a class = "menu-item" href="home.html">INICIO</a>
+                    <a class = "menu-item" href="pistas.html">PISTAS</a>
+                    <a class = "menu-item" href="reservas.html">RESERVAS</a>
+                    <a class = "menu-item" href="perfil.html">ADMIN</a>
+                </nav>
+            </div>
+        </header>
+
+    <main class="container detalle-pista-page">
+
+    <div class="detalle-pista-topbar">
+        <div>
+        <p class="detalle-pista-breadcrumb">Panel / Pistas / Nueva pista</p>
+        <h1>Nueva pista</h1>
+        <p class="detalle-pista-subtitle">Complete el formulario para registrar una nueva pista en el sistema.</p>
+        </div>
+
+        <a href="gestionPistas.html" class="detalle-pista-volver">← Volver a pistas</a>
+    </div>
+
+    <section class="detalle-pista-layout">
+
+        <!-- Columna izquierda -->
+        <aside class="detalle-pista-sidebar">
+        <div class="detalle-pista-card">
+
+            <div class="detalle-pista-info-list">
+            <div class="detalle-pista-info-item">
+                <strong>Vista previa</strong>
+                <span class="detalle-pista-label">Esta imagen es solo ilustrativa. La pista se creará sin imagen asociada.</span>
+            </div>
+
+            <div class="detalle-pista-img-wrap">
+            <img src="assets/img/pistaPadel5.webp" alt="Pista 1" class="detalle-pista-img">
+            <span class="detalle-pista-estado-badge detalle-pista-estado-activa">Activa</span>
+            </div>
+
+            <div class="detalle-pista-info-list">
+            <div class="detalle-pista-info-item">
+                <strong>🏷 Nombre</strong>
+                <span class="detalle-pista-label">Sin nombre</span>
+            </div>
+
+            <div class="detalle-pista-info-item">
+                <strong>📍Ubicación</strong>
+                <span class="detalle-pista-label">Sin ubicación</span>
+            </div>
+
+            <div class="detalle-pista-info-item">
+                <strong>🕒Precio por hora</strong>
+                <span class="detalle-pista-label">0,00€</span>
+            </div>
+
+            <div class="detalle-pista-info-item">
+                <span class="detalle-pista-label">🕒Estado</span>
+                <span class="detalle-pista-estado-badge detalle-pista-estado-inactiva">Inactiva</span>
+            </div>
+            </div>
+        </div>
+        </aside>
+
+        <!-- Columna derecha -->
+        <section class="detalle-pista-main">
+        <div class="detalle-pista-card">
+            <h2 class="detalle-pista-section-title">Información de la pista</h2>
+
+            <div class="detalle-pista-form-grid">
+            <div class="detalle-pista-field">
+                <label for="nombre">Nombre de la pista *</label>
+                <input type="text" id="nombre" placeholder="Ej: Pista 1">
+            </div>
+
+            <div class="detalle-pista-field">
+                <label for="ubicacion">Ubicación*</label>
+                <input type="text" id="ubicacion" placeholder="Ej: Zona Norte">
+            </div>
+
+            <div class="detalle-pista-field">
+                <label for="precio">Precio por hora(€)*</label>
+                <input type="text" id="precio" placeholder="Ej: 25,00 €">
+            </div>
+            </div>
+
+            <div class="detalle-pista-field detalle-pista-field-full">
+            <label for="descripcion">Descripción (Opcional)</label>
+            <textarea id="descripcion" placeholder="Describe la pista, materiales, recomendaciones o cualquier información relevante."></textarea>
+            </div>
+
+            <hr class="detalle-pista-divider">
+
+           <h2 class="nueva-pista-card-title">Estado de la pista *</h2>
+
+            <div class="nueva-pista-field">
+                <label>Estado</label>
+
+                <div class="nueva-pista-estado-grid">
+
+                <label class="nueva-pista-estado-option">
+                    <input type="radio" name="estado" checked>
+                    <span class="nueva-pista-radio-dot"></span>
+                    <span>
+                    <strong>Activa</strong>
+                    <small>La pista estará disponible para reservas.</small>
+                    </span>
+                </label>
+
+                <label class="nueva-pista-estado-option">
+                    <input type="radio" name="estado">
+                    <span class="nueva-pista-radio-dot"></span>
+                    <span>
+                    <strong>Inactiva</strong>
+                    <small>La pista no aparecerá en el sistema de reservas.</small>
+                    </span>
+                </label>
+
+                </div>
+            </div>
+
+            <div class="gestion-pistas-alerta">
+                <span class="alerta-icono">ℹ</span>
+                <p>Las pistas inactivas no aparecerán en el sistema de reservas. Puedes activarlas en cualquier momento.</p>
+            </div>
+
+            <div class="nueva-pista-actions">
+            <button class="nueva-pista-btn nueva-pista-btn-secondary" type="button">Cancelar</button>
+            <button class="nueva-pista-btn nueva-pista-btn-primary" type="submit">Crear pista</button>
+          </div>
+        </div>
+        </section>
+
+    </section>
+    </main>
+
+</body>

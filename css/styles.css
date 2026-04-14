@@ -1182,3 +1182,664 @@ img {
     width: 100%;
   }
 }
+
+
+.hero-det {
+  text-align: left;          /* ← alineado a la izquierda */
+  margin: 20px 0 10px;      /* ↓ menos espacio */
+}
+
+.hero-det h1 {
+  font-size: 2.2rem;        /* ↓ más pequeño */
+  color: #14532d;           /* verde oscuro como la imagen */
+  margin-bottom: 6px;
+}
+
+.hero-det p {
+  font-size: 1rem;          /* ↓ más compacto */
+  color: #6b7280;           /* gris suave */
+}
+
+/* reservas.html - tabla estilo gestión de pistas */
+.gestion-pistas-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+/* IZQUIERDA */
+.gestion-pistas-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* BUSCADOR */
+.gestion-pistas-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0 12px;
+  height: 44px;
+}
+
+.gestion-pistas-search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 220px;
+}
+
+.search-icon {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* SELECTS */
+.gestion-pistas-select {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+}
+
+/* BOTÓN */
+.gestion-pistas-new-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 10px;
+  background: #0b6b36;
+  color: white;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gestion-pistas-new-btn:hover {
+  background: #09552b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .gestion-pistas-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gestion-pistas-toolbar-left {
+    width: 100%;
+  }
+
+  .gestion-pistas-search-box {
+    width: 100%;
+  }
+
+  .gestion-pistas-search-box input {
+    width: 100%;
+  }
+
+  .gestion-pistas-select {
+    width: 100%;
+  }
+
+  .gestion-pistas-new-btn {
+    width: 100%;
+  }
+}
+
+.gestion-pistas-tabla {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  margin-top: 24px;
+}
+
+.gestion-pistas-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.gestion-pistas-tabla th {
+  background-color: #f9fafb;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.gestion-pistas-tabla td {
+  padding: 18px 16px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 16px;
+  text-align: center;
+}
+
+.gestion-pistas-tabla tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.gestion-pistas-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.gestion-pistas-img {
+  width: 84px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.gestion-pistas-texto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.gestion-pistas-texto strong {
+  font-size: 16px;
+  color: #111827;
+}
+
+.gestion-pistas-badge {
+  display: inline-block;
+  background: #eeeeee;
+  color: #4b5563;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gestion-pistas-estado {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.gestion-pistas-estado::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* estados específicos */
+.gestion-pistas-activa {
+  background: #bfe3cc;
+  color: #1e6538;
+}
+
+.gestion-pistas-inactiva {
+  background: #d6d4cb;
+  color: #675f56;
+}
+
+
+.gestion-pistas-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f5f5f5;
+  border: 1px solid #e5e7eb;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.gestion-pistas-btn:hover {
+  background: #eaeaea;
+}
+
+.gestion-pistas-alerta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #e8f5e9;
+  border: 1px solid #cfe8d5;
+  color: #2f6b3f;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.alerta-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #cde8d2;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/*detallePista*/
+
+.detalle-pista-page {
+  padding: 40px 0 70px;
+}
+
+.detalle-pista-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.detalle-pista-breadcrumb {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.detalle-pista-topbar h1 {
+  font-size: 2.2rem;        /* ↓ más pequeño */
+  color: #14532d;           /* verde oscuro como la imagen */
+  margin-bottom: 6px;
+}
+
+.detalle-pista-subtitle {
+  font-size: 1rem;          /* ↓ más compacto */
+  color: #6b7280; 
+}
+
+
+.detalle-pista-volver {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.detalle-pista-volver:hover {
+  background: #f9fafb;
+}
+
+.detalle-pista-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.detalle-pista-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.detalle-pista-img-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.detalle-pista-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.detalle-pista-estado-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.detalle-pista-estado-activa {
+  background: #c8f0d6;
+  color: #0f642e;
+}
+
+.detalle-pista-estado-inactiva {
+  background: #d9d7d1;
+  color: #605f5d;
+}
+
+.detalle-estado-option:has(input:checked) {
+  border: 2px solid #0b6b36;
+  background: #f0fdf4;
+}
+
+.detalle-pista-img-wrap .detalle-pista-estado-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.detalle-pista-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.detalle-pista-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detalle-pista-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.detalle-pista-info-item strong {
+  color: #111827;
+  font-size: 16px;
+}
+
+.detalle-pista-section-title {
+  font-size: 1.2rem;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.detalle-pista-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.detalle-pista-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detalle-pista-field-full {
+  margin-bottom: 20px;
+}
+
+.detalle-pista-field-small {
+  max-width: 320px;
+  margin-bottom: 18px;
+}
+
+.detalle-pista-field label {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 14px;
+}
+
+.detalle-pista-field input,
+.detalle-pista-field textarea,
+.detalle-pista-field select {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  border-radius: 10px;
+  padding: 13px 14px;
+  font-size: 15px;
+  color: #111827;
+  outline: none;
+}
+
+.detalle-pista-field textarea {
+  min-height: 110px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+}
+
+.detalle-pista-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 24px 0;
+}
+
+.detalle-pista-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.detalle-pista-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.detalle-pista-btn-secondary {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.detalle-pista-btn-secondary:hover {
+  background: #f9fafb;
+}
+
+.detalle-pista-btn-primary {
+  background: #0b6b36;
+  color: #fff;
+}
+
+.detalle-pista-btn-primary:hover {
+  background: #09552b;
+}
+
+.detalle-pista-btn-danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.detalle-pista-btn-danger:hover {
+  background: #dc2626;
+}
+
+/* grid estado tipo tarjetas */
+.detalle-estado-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.detalle-estado-option {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.detalle-estado-option input {
+  display: none;
+}
+
+.detalle-estado-option strong {
+  display: block;
+}
+
+.detalle-estado-option small {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+
+
+.nueva-pista-field textarea {
+  min-height: 110px;
+  resize: none;
+  font-family: Arial, sans-serif;
+}
+
+.nueva-pista-estado-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.nueva-pista-estado-option {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.nueva-pista-estado-option input {
+  display: none;
+}
+
+.nueva-pista-radio-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9ca3af;
+  margin-top: 4px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.nueva-pista-estado-option strong {
+  display: block;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.nueva-pista-estado-option small {
+  color: #667085;
+  font-size: 0.95rem;
+}
+
+/* tarjeta seleccionada */
+.nueva-pista-estado-option:has(input:checked) {
+  border: 2px solid #15803D;
+  background: #f0fdf4;
+}
+
+/* punto seleccionado */
+.nueva-pista-estado-option:has(input:checked) .nueva-pista-radio-dot {
+  background: #15803D;
+}
+
+
+.nueva-pista-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.nueva-pista-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nueva-pista-btn-secondary {
+  background: #fff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.nueva-pista-btn-secondary:hover {
+  background: #f9fafb;
+}
+
+.nueva-pista-btn-primary {
+  background: #0b6b36;
+  color: #fff;
+}
+
+.nueva-pista-btn-primary:hover {
+  background: #09552b;
+}
+
+@media (max-width: 900px) {
+    .gestion-pistas-tabla {
+    overflow-x: auto;
+  }
+
+  .gestion-pistas-tabla table {
+    min-width: 900px;
+  }
+
+  .detalle-pista-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detalle-pista-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detalle-pista-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .detalle-pista-actions {
+    flex-direction: column;
+  }
+
+  .detalle-pista-btn {
+    width: 100%;
+  }
+}
+
+
