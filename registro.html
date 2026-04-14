@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img class = "logo" src = "assets/img/LogoPadel.png">
+        ATILANOPADEL
+      </div>
+
+      <nav class="menu">
+        <a class = "menu-item" href="home.html">INICIO</a>
+        <a class = "menu-item" href="pistas.html">PISTAS</a>
+        <a class = "menu-item" href="reservas.html">RESERVAS</a>
+        <a class = "menu-item" href="perfil.html">PERFIL</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    
+    <section class="card result-card">
+        <h2>CREA TU CUENTA</h2>
+        <p class="result-subtitle">
+            Únete a AtilanoPadel y empieza a reservar tus pistas
+        </p>
+
+        <div class="form-row">
+            <div>
+                <label>Nombre</label>
+            </div>
+            <div>
+                <label>Apellidos</label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <input type="text" placeholder="Tu nombre">
+            </div>
+            <div>
+                <input type="text" placeholder="Tus apellidos">
+            </div>
+        </div>      
+
+        <div class="result-row column">
+          <span>Correo electrónico</span>
+          <input type="email" name="correo" id="correo" required placeholder="tu@email.com">
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label>Contraseña</label>
+            </div>
+            <div>
+                <label>Repetir contraseña</label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <input type="password" placeholder="Crea una contraseña">
+            </div>
+            <div>
+                <input type="password" placeholder="Confirma tu contraseña">
+            </div>
+        </div>
+
+        
+        <div class="result-row column">
+            <label class="checkbox">
+                    <input type="checkbox" name="show" value="true">
+                    Ver contraseña
+            </label>
+            <p class="result-subtitle pssw">
+                La contraseña debe tener al menos 8 caracteres
+            </p>
+        </div>
+        
+
+        <div class="result-row column">
+          <span>Teléfono</span>
+          <input type="tel" name="telefono" id="telefono" required placeholder="600 123 456">
+        </div>
+
+            
+
+        <div class="result-actions">
+            <a href="pistas.html" class="pista-btn">Crear cuenta</a>
+            <p class="result-subtitle">
+                ¿Ya tienes cuenta con AtilanoPadel?
+                <a href="login.html" class="linked-text">
+                    <strong>Iniciar sesión</strong>
+                </a>
+            </p>
+            
+        </div>
+        
+
+
+      </section>
+
+  </main>
+    <footer class = "footer">
+        <div class = "container footer">
+            <p class="foot-note">Muchas gracias por usar nuestro servicio!</p><br>
+            <p class="foot-note">Si está sufriendo dificultades técnicas y requiere de soporte no dude en contactarnos a través del número:</p><br>
+            <p class = "foot-note"><strong>+34 914586011</strong></p><br>
+            <p class = "foot-note">AtilanoPadel ©</p>
+        </div>
+    </footer>
+</body>
+</html>

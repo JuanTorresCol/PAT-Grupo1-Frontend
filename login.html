@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio sesión | AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img class = "logo" src = "assets/img/LogoPadel.png">
+        ATILANOPADEL
+      </div>
+
+      <nav class="menu">
+        <a class = "menu-item" href="home.html">INICIO</a>
+        <a class = "menu-item" href="pistas.html">PISTAS</a>
+        <a class = "menu-item" href="reservas.html">RESERVAS</a>
+        <a class = "menu-item" href="perfil.html">PERFIL</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    
+    <section class="card result-card">
+        <h2>BIENVENIDO</h2>
+        <p class="result-subtitle">
+            Inicia sesión para poder continuar
+        </p>
+
+        <div class="result-row column">
+          <span>Correo electrónico</span>
+          <input type="email" name="correo" id="correo" required placeholder="tu@email.com">
+        </div>
+
+        <div class="result-row column">
+          <span>Contraseña</span>
+          <input type="password" name="password" id="password" required>
+          <label class="checkbox">
+                <input type="checkbox" name="cardtype" value="visa">
+                Ver contraseña
+          </label>
+            
+        </div>
+
+        
+
+        <div class="result-actions">
+            <a href="pistas.html" class="pista-btn">Iniciar sesión</a>
+            <p class="result-subtitle">
+                ¿No tienes cuenta con AtilanoPadel?
+                <a href="registro.html" class="linked-text">
+                    <strong>Crear cuenta</strong>
+                </a>
+            </p>
+            
+        </div>
+        
+
+
+      </section>
+
+  </main>
+    <footer class = "footer">
+        <div class = "container footer">
+            <p class="foot-note">Muchas gracias por usar nuestro servicio!</p><br>
+            <p class="foot-note">Si está sufriendo dificultades técnicas y requiere de soporte no dude en contactarnos a través del número:</p><br>
+            <p class = "foot-note"><strong>+34 914586011</strong></p><br>
+            <p class = "foot-note">AtilanoPadel ©</p>
+        </div>
+    </footer>
+</body>
+</html>

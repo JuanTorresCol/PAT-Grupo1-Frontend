@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración | AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="assets/img/LogoPadel.png" alt="Logo AtilanoPadel">
+        ATILANOPADEL
+      </div>
+      <nav class="menu">
+        <a class="menu-item" href="home.html">INICIO</a>
+        <a class="menu-item" href="pistas.html">PISTAS</a>
+        <a class="menu-item" href="reservas.html">RESERVAS</a>
+        <a class="menu-item" href="admin.html" style="font-weight: bold;">ADMIN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="hero">
+      <h1>Panel de administración</h1>
+      <p>Gestiona usuarios, pistas y reservas de todo el sistema desde aquí.</p>
+    </section>
+
+    <section class="admin-dashboard-grid">
+        <div class="admin-card">
+          <div class="admin-card-icon">👤</div>
+          <h3>Usuarios</h3>
+          <p>Consulta la lista de usuarios registrados y edita sus datos.</p>
+          <a href="adminUsuarios.html" class="btn-primary">Gestionar usuarios →</a>
+        </div>
+  
+        <div class="admin-card">
+          <div class="admin-card-icon">🎾</div>
+          <h3>Pistas</h3>
+          <p>Crea, edita o desactiva pistas disponibles para reservar.</p>
+          <a href="adminPistas.html" class="btn-primary">Gestionar pistas →</a>
+        </div>
+  
+        <div class="admin-card">
+          <div class="admin-card-icon">📅</div>
+          <h3>Reservas</h3>
+          <p>Consulta todas las reservas realizadas por los usuarios.</p>
+          <a href="adminReservas.html" class="btn-primary">Ver reservas →</a>
+        </div>
+      </section>
+</main>
+
+  <footer class="footer">
+    <div class="container footer">
+      <p class="foot-note">Muchas gracias por usar nuestro servicio!</p><br>
+      <p class="foot-note">Si está sufriendo dificultades técnicas y requiere de soporte no dude en contactarnos a través del número:</p><br>
+      <p class="foot-note"><strong>+34 914586011</strong></p><br>
+      <p class="foot-note">AtilanoPadel ©</p>
+    </div>
+  </footer>
+
+</body>
+</html>

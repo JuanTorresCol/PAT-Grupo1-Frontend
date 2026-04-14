@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Usuarios | AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="assets/img/LogoPadel.png" alt="Logo AtilanoPadel">
+        ATILANOPADEL
+      </div>
+
+      <nav class="menu">
+        <a class="menu-item" href="home.html">INICIO</a>
+        <a class="menu-item" href="pistas.html">PISTAS</a>
+        <a class="menu-item" href="reservas.html">RESERVAS</a>
+        <a class="menu-item" href="admin.html" style="font-weight: bold;">ADMIN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container reservas-page">
+    <a href="admin.html" class="back-button">← Volver al panel</a>
+
+    <section class="hero">
+      <h1>Gestión de usuarios</h1>
+      <p>Consulta y administra los usuarios registrados en la plataforma.</p>
+    </section>
+
+    <section class="reservas-filtros">
+      <input type="text" placeholder="Buscar por nombre o email..." style="width: 100%; max-width: 400px;">
+      <button class="buscar-btn">Buscar</button>
+    </section>
+
+    <section class="reservas-tabla">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: left;">Usuario</th>
+            <th>Teléfono</th>
+            <th>Fecha de registro</th>
+            <th>Rol</th>
+            <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="clickable-row" onclick="window.location='perfil.html'">
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar">MG</div>
+                    <div class="user-details">
+                      <strong>María García</strong>
+                      <small>maria.garcia@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>+34 600 123 456</td>
+                <td>15 ene 2025</td>
+                <td>Usuario</td>
+                <td><span class="estado activo">Activo</span></td>
+              </tr>
+              
+              <tr class="clickable-row" onclick="window.location='perfil.html'">
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar">JP</div>
+                    <div class="user-details">
+                      <strong>Juan Pérez</strong>
+                      <small>juan.perez@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>+34 611 234 567</td>
+                <td>10 ene 2025</td>
+                <td>Usuario</td>
+                <td><span class="estado activo">Activo</span></td>
+              </tr>
+    
+              <tr class="clickable-row" onclick="window.location='perfil.html'">
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar">AL</div>
+                    <div class="user-details">
+                      <strong>Ana López</strong>
+                      <small>ana.lopez@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>+34 622 345 678</td>
+                <td>5 ene 2025</td>
+                <td>Usuario</td>
+                <td><span class="estado activo">Activo</span></td>
+              </tr>
+    
+              <tr class="clickable-row" onclick="window.location='perfil.html'">
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar">CR</div>
+                    <div class="user-details">
+                      <strong>Carlos Ruiz</strong>
+                      <small>carlos.ruiz@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>+34 633 456 789</td>
+                <td>28 dic 2024</td>
+                <td>Usuario</td>
+                <td><span class="estado activo">Activo</span></td>
+              </tr>
+              
+              <tr class="clickable-row" onclick="window.location='perfil.html'">
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar">LM</div>
+                    <div class="user-details">
+                      <strong>Lucía Martín</strong>
+                      <small>lucia.martin@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>+34 644 567 890</td>
+                <td>20 dic 2024</td>
+                <td>Usuario</td>
+                <td><span class="estado inactivo">Inactivo</span></td>
+              </tr>
+    
+        </tbody>
+      </table>
+    </section>
+
+    <div class="paginacion">
+
+        <a href="adminUsuarios.html" class="pag-btn anterior">
+          ← Anterior
+        </a>
+        <span class="pag-num active">1</span>
+        <a href="adminUsuarios.html" class="pag-btn siguiente">
+          Siguiente →
+        </a>
+      
+          </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer">
+      <p class="foot-note">AtilanoPadel ©</p>
+    </div>
+  </footer>
+
+</body>
+</html>

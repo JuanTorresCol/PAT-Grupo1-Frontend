@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Reservas | AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="assets/img/LogoPadel.png" alt="Logo AtilanoPadel">
+        ATILANOPADEL
+      </div>
+
+      <nav class="menu">
+        <a class="menu-item" href="home.html">INICIO</a>
+        <a class="menu-item" href="pistas.html">PISTAS</a>
+        <a class="menu-item" href="reservas.html">RESERVAS</a>
+        <a class="menu-item" href="admin.html" style="font-weight: bold;">ADMIN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container reservas-page">
+    <a href="admin.html" class="back-button">← Volver al panel</a>
+
+    <section class="hero">
+      <h1>Gestión de reservas</h1>
+      <p>Consulta y gestiona todas las reservas realizadas en el sistema.</p>
+    </section>
+
+    <section class="reservas-filtros" style="flex-wrap: wrap;">
+      <input type="text" placeholder="Buscar por ID de reserva">
+      <input type="text" placeholder="Nombre o email de usuario..." style="width: 380px;">
+      <button class="buscar-btn">Buscar</button>
+    </section>
+
+    <section class="reservas-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th style="text-align: left; width: 25%;">Usuario</th>
+              <th>Pista</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Duración</th>
+              <th>Estado</th>
+              </tr>
+          </thead>
+          <tbody>
+            
+            <tr class="clickable-row" onclick="window.location='viewReserva.html'">
+                <td><strong>#1248</strong></td>
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">JP</div>
+                    <div class="user-details">
+                      <strong>Juan Pérez</strong>
+                      <small>juan.perez@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-details">
+                    <strong>Pista 1</strong>
+                    <small>Zona Norte</small>
+                  </div>
+                </td>
+                <td>12/06/2026<br><small>Viernes</small></td>
+                <td>18:00</td>
+                <td>90 min</td>
+                <td><span class="estado confirmada">Confirmada</span></td>
+              </tr>
+              
+              <tr class="clickable-row" onclick="window.location='viewReserva.html'">
+                <td><strong>#1247</strong></td>
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">MG</div>
+                    <div class="user-details">
+                      <strong>María García</strong>
+                      <small>maria.garcia@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-details">
+                    <strong>Pista 3</strong>
+                    <small>Zona Sur</small>
+                  </div>
+                </td>
+                <td>12/06/2026<br><small>Viernes</small></td>
+                <td>20:00</td>
+                <td>60 min</td>
+                <td><span class="estado pasada">Pasada</span></td>
+              </tr>
+    
+              <tr class="clickable-row" onclick="window.location='viewReserva.html'">
+                <td><strong>#1246</strong></td>
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">AS</div>
+                    <div class="user-details">
+                      <strong>Alejandro Sánchez</strong>
+                      <small>alejandro.s@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-details">
+                    <strong>Pista 2</strong>
+                    <small>Zona Este</small>
+                  </div>
+                </td>
+                <td>11/06/2026<br><small>Jueves</small></td>
+                <td>19:30</td>
+                <td>90 min</td>
+                <td><span class="estado confirmada">Confirmada</span></td>
+              </tr>
+    
+              <tr class="clickable-row" onclick="window.location='viewReserva.html'">
+                <td><strong>#1245</strong></td>
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">LC</div>
+                    <div class="user-details">
+                      <strong>Laura Castillo</strong>
+                      <small>laura.castillo@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-details">
+                    <strong>Pista 1</strong>
+                    <small>Zona Norte</small>
+                  </div>
+                </td>
+                <td>11/06/2026<br><small>Jueves</small></td>
+                <td>17:00</td>
+                <td>60 min</td>
+                <td><span class="estado cancelada">Cancelada</span></td>
+              </tr>
+    
+              <tr class="clickable-row" onclick="window.location='viewReserva.html'">
+                <td><strong>#1244</strong></td>
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">DR</div>
+                    <div class="user-details">
+                      <strong>Daniel Romero</strong>
+                      <small>daniel.r@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-details">
+                    <strong>Pista 4</strong>
+                    <small>Zona Oeste</small>
+                  </div>
+                </td>
+                <td>10/06/2026<br><small>Miércoles</small></td>
+                <td>18:30</td>
+                <td>90 min</td>
+                <td><span class="estado confirmada">Confirmada</span></td>
+              </tr>
+    
+              <tr class="clickable-row" onclick="window.location='viewReserva.html'">
+                <td><strong>#1243</strong></td>
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">AV</div>
+                    <div class="user-details">
+                      <strong>Ana Vargas</strong>
+                      <small>ana.vargas@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-details">
+                    <strong>Pista 2</strong>
+                    <small>Zona Este</small>
+                  </div>
+                </td>
+                <td>10/06/2026<br><small>Miércoles</small></td>
+                <td>20:00</td>
+                <td>60 min</td>
+                <td><span class="estado pasada">Pasada</span></td>
+              </tr>
+    
+              <tr class="clickable-row" onclick="window.location='viewReserva.html'">
+                <td><strong>#1242</strong></td>
+                <td>
+                  <div class="user-info-cell">
+                    <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">FC</div>
+                    <div class="user-details">
+                      <strong>Fernando Costa</strong>
+                      <small>fernando.c@email.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-details">
+                    <strong>Pista 3</strong>
+                    <small>Zona Sur</small>
+                  </div>
+                </td>
+                <td>09/06/2026<br><small>Martes</small></td>
+                <td>19:00</td>
+                <td>90 min</td>
+                <td><span class="estado confirmada">Confirmada</span></td>
+              </tr>
+  
+          </tbody>
+        </table>
+      </section>
+
+    <div class="paginacion">
+      <a href="#" class="pag-btn anterior">← Anterior</a>
+      <span class="pag-num active">1</span>
+      <a href="#" class="pag-btn siguiente">Siguiente →</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer">
+      <p class="foot-note">AtilanoPadel ©</p>
+    </div>
+  </footer>
+
+</body>
+</html>
