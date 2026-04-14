@@ -34,7 +34,7 @@
         <p class="detalle-pista-subtitle">Complete el formulario para registrar una nueva pista en el sistema.</p>
         </div>
 
-        <a href="gestionPistas.html" class="detalle-pista-volver">← Volver a pistas</a>
+        <a href="adminViewPista" class="detalle-pista-volver">← Volver a pistas</a>
     </div>
 
     <section class="detalle-pista-layout">
@@ -56,23 +56,23 @@
 
             <div class="detalle-pista-info-list">
             <div class="detalle-pista-info-item">
-                <strong>🏷 Nombre</strong>
+                <strong>Nombre</strong>
                 <span class="detalle-pista-label">Sin nombre</span>
             </div>
 
             <div class="detalle-pista-info-item">
-                <strong>📍Ubicación</strong>
+                <strong>Ubicación</strong>
                 <span class="detalle-pista-label">Sin ubicación</span>
             </div>
 
             <div class="detalle-pista-info-item">
-                <strong>🕒Precio por hora</strong>
+                <strong>Precio por hora</strong>
                 <span class="detalle-pista-label">0,00€</span>
             </div>
 
             <div class="detalle-pista-info-item">
-                <span class="detalle-pista-label">🕒Estado</span>
-                <span class="detalle-pista-estado-badge detalle-pista-estado-inactiva">Inactiva</span>
+                <span class="detalle-pista-label">Estado</span>
+                <span class="detalle-pista-estado-badge detalle-pista-estado-inactiva">Activa</span>
             </div>
             </div>
         </div>
@@ -140,10 +140,10 @@
                 <p>Las pistas inactivas no aparecerán en el sistema de reservas. Puedes activarlas en cualquier momento.</p>
             </div>
 
-            <div class="nueva-pista-actions">
-            <button class="nueva-pista-btn nueva-pista-btn-secondary" type="button">Cancelar</button>
-            <button class="nueva-pista-btn nueva-pista-btn-primary" type="submit">Crear pista</button>
-          </div>
+            <div class="detalle-actions">
+                <a href="adminPistas.html" class="secondary-btn">Cancelar</a>
+                <a href="adminPistas.html" class="primary-btn">Guardar cambios</a>  <!-- Debería ir a una confirmacion de pista creada-->
+      </div>
         </div>
         </section>
 

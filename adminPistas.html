@@ -26,8 +26,9 @@
         </header>
         
   <main class="container reservas-page">
+    <a href="admin.html" class="back-button">← Volver al panel</a>
 
-  <section class="hero-det">
+  <section class="hero">
     <h1>Gestion de pistas</h1>
     <p>Consulta todas tus pistas, tanto las activas como las inactivas.</p>
   </section>
@@ -36,29 +37,15 @@
 
     <div class="gestion-pistas-toolbar-left">
 
-        <div class="gestion-pistas-search-box">
-            <span class="search-icon">🔍</span>
-            <input 
-                type="text" 
-                placeholder="Buscar por nombre o ubicación..."
-            >
-        </div>
+        <section class="reservas-filtros">
+        <input type="text" placeholder="Buscar por ID de pista">
+        <button class="buscar-btn">Buscar</button>
+        </section>
 
-        <select class="gestion-pistas-select">
-            <option>Estado: Todos</option>
-            <option>Activa</option>
-            <option>Inactiva</option>
-        </select>
-
-        <select class="gestion-pistas-select">
-            <option>Tipo: Todos</option>
-            <option>Interior</option>
-            <option>Exterior</option>
-        </select>
 
     </div>
 
-    <a href="nuevaPista.html" class="gestion-pistas-new-btn">
+    <a href="adminnewPista.html" class="gestion-pistas-new-btn">
         + Nueva pista
     </a>
 
@@ -70,17 +57,15 @@
       <thead>
         <tr>
           <th>Pista</th>
-          <th>Tipo</th>
           <th>Ubicacion</th>
           <th>Precio por hora</th>
           <th>Estado</th>
-          <th>Acciones</th>
         </tr>
       </thead>
 
       <tbody id="tabla-pistas">
 
-        <tr>
+        <tr onclick="window.location='adminviewPista.html'"> <!-- esto es evento de js para ir a viewPista -->
         <td class="gestion-pistas-info">
           <img src="assets/img/pistaPadel5.webp" class="gestion-pistas-img">
           <div class="gestion-pistas-texto">
@@ -89,7 +74,6 @@
           </div>
         </td>
 
-        <td>Exterior</td>
         <td>Zona Norte</td>
         <td>25,00 €</td>
         <td>
@@ -97,12 +81,9 @@
             Activa
           </span>
         </td>
-        <td>
-          <a href="detallePista.html?id=1" class="gestion-pistas-btn">👁 Ver</a>
-        </td>
         </tr>
 
-        <tr>
+        <tr onclick="window.location='adminviewPista.html'"> 
         <td class="gestion-pistas-info">
           <img src="assets/img/pistaPadel3.webp" class="gestion-pistas-img">
           <div class="gestion-pistas-texto">
@@ -110,8 +91,6 @@
             <span class="gestion-pistas-badge">#2</span>
           </div>
         </td>
-
-        <td>Exterior</td>
         <td>Zona Norte</td>
         <td>25,00 €</td>
         
@@ -120,13 +99,9 @@
             Activa
           </span>
         </td>
-
-        <td>
-          <a href="detallePista.html?id=2" class="gestion-pistas-btn">👁 Ver</a>
-        </td>
         </tr>
 
-        <tr>
+        <tr onclick="window.location='adminviewPista.html'">
             <td class="gestion-pistas-info">
                 <img src="assets/img/pistaPadel1.webp" class="gestion-pistas-img">
                 <div class="gestion-pistas-texto">
@@ -134,7 +109,6 @@
                 <span class="gestion-pistas-badge">#3</span>
                 </div>
             </td>
-            <td>Interior</td>
             <td>Zona Sur</td>
             <td>30,00 €</td>
             <td>
@@ -142,12 +116,9 @@
                 Activa
                 </span>
             </td>
-            <td>
-                <a href="detallePista.html?id=3" class="gestion-pistas-btn">👁 Ver</a>
-            </td>
         </tr>
 
-        <tr>
+        <tr onclick="window.location='adminviewPista.html'">
         <td class="gestion-pistas-info">
             <img src="assets/img/pistaPadel2.webp" class="gestion-pistas-img">
             <div class="gestion-pistas-texto">
@@ -155,7 +126,6 @@
             <span class="gestion-pistas-badge">#4</span>
             </div>
         </td>
-        <td>Interior</td>
         <td>Zona Sur</td>
         <td>30,00 €</td>
         <td>
@@ -163,12 +133,9 @@
             Activa
             </span>
         </td>
-        <td>
-            <a href="detallePista.html?id=4" class="gestion-pistas-btn">👁 Ver</a>
-        </td>
         </tr>
 
-        <tr>
+        <tr onclick="window.location='adminviewPista.html'">
         <td class="gestion-pistas-info">
             <img src="assets/img/pistaPadel5.webp" class="gestion-pistas-img">
             <div class="gestion-pistas-texto">
@@ -176,7 +143,6 @@
             <span class="gestion-pistas-badge">#5</span>
             </div>
         </td>
-        <td>Exterior</td>
         <td>Zona Centro</td>
         <td>25,00 €</td>
         <td>
@@ -184,12 +150,9 @@
             Activa
             </span>
         </td>
-        <td>
-            <a href="detallePista.html?id=5" class="gestion-pistas-btn">👁 Ver</a>
-        </td>
         </tr>
 
-        <tr>
+        <tr onclick="window.location='adminviewPista.html'">
         <td class="gestion-pistas-info">
             <img src="assets/img/pistaPadel6.webp" class="gestion-pistas-img">
             <div class="gestion-pistas-texto">
@@ -197,7 +160,6 @@
             <span class="gestion-pistas-badge">#6</span>
             </div>
         </td>
-        <td>Exterior</td>
         <td>Zona Centro</td>
         <td>25,00 €</td>
         <td>
@@ -205,13 +167,9 @@
             Inactiva
             </span>
         </td>
-
-        <td>
-            <a href="detallePista.html?id=6" class="gestion-pistas-btn">👁 Ver</a>
-        </td>
         </tr>
 
-        <tr>
+        <tr onclick="window.location='adminviewPista.html'">
             <td class="gestion-pistas-info">
                 <img src="assets/img/pistaPadel1.webp" class="gestion-pistas-img">
                 <div class="gestion-pistas-texto">
@@ -219,7 +177,6 @@
                 <span class="gestion-pistas-badge">#7</span>
                 </div>
             </td>
-            <td>Exterior</td>
             <td>Zona Este</td>
             <td>28,00 €</td>
             <td>
@@ -227,12 +184,9 @@
                 Activa
                 </span>
             </td>
-            <td>
-                <a href="detallePista.html?id=7" class="gestion-pistas-btn">👁 Ver</a>
-            </td>
             </tr>
 
-        <tr>
+        <tr onclick="window.location='adminviewPista.html'">
         <td class="gestion-pistas-info">
             <img src="assets/img/pistaPadel2.webp" class="gestion-pistas-img">
             <div class="gestion-pistas-texto">
@@ -240,16 +194,12 @@
             <span class="gestion-pistas-badge">#8</span>
             </div>
         </td>
-        <td>Interior</td>
         <td>Zona Oeste</td>
         <td>27,00 €</td>
         <td>
             <span class="gestion-pistas-estado gestion-pistas-inactiva">
             Inactiva
             </span>
-        </td>
-        <td>
-            <a href="detallePista.html?id=8" class="gestion-pistas-btn">👁 Ver</a>
         </td>
         </tr>
 
@@ -273,9 +223,9 @@
         </p>
     </div>
 
-
-
 </main>
+
+
     <footer class = "footer">
         <div class = "container footer">
             <p class="foot-note">Muchas gracias por usar nuestro servicio!</p><br>

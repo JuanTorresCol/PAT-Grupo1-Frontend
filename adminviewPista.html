@@ -34,7 +34,7 @@
         <p class="detalle-pista-subtitle">Consulta toda la información de la pista.</p>
         </div>
 
-        <a href="gestionPistas.html" class="detalle-pista-volver">← Volver a pistas</a>
+        <a href="adminPistas.html" class="detalle-pista-volver">← Volver a pistas</a>
     </div>
 
     <section class="detalle-pista-layout">
@@ -58,10 +58,6 @@
                     <strong id="info-ubicacion">Zona Norte</strong>
                 </div>
 
-                <div class="detalle-pista-info-item">
-                    <span class="detalle-pista-label">Tipo</span>
-                    <strong id="info-tipo">Exterior</strong>
-                </div>
 
                 <div class="detalle-pista-info-item">
                     <span class="detalle-pista-label">Precio por hora</span>
@@ -92,10 +88,6 @@
                 <input type="text" id="ubicacion" value="Zona Norte">
             </div>
 
-            <div class="detalle-pista-field">
-                <label for="tipo">Tipo</label>
-                <input type="text" id="tipo" value="Exterior">
-            </div>
 
             <div class="detalle-pista-field">
                 <label for="precio">Precio por hora</label>
@@ -125,10 +117,10 @@
             <p>Las pistas inactivas no aparecerán en el sistema de reservas. Puedes activarlas en cualquier momento.</p>
             </div>
 
-            <div class="detalle-pista-actions">
-            <button class="detalle-pista-btn detalle-pista-btn-secondary">Cancelar</button>
-            <button class="detalle-pista-btn detalle-pista-btn-primary">Guardar cambios</button>
-            <button class="detalle-pista-btn detalle-pista-btn-danger">Eliminar pista</button>
+            <div class="detalle-actions">
+            <a href="pistaEliminada.html"class="danger-btn">Eliminar Pista</a>
+            <a href="adminPistas.html" class="secondary-btn">Cancelar</a>
+            <a href="adminPistas.html" class="primary-btn">Guardar cambios</a>
             </div>
         </div>
         </section>
