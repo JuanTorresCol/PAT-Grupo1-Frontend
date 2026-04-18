@@ -1,167 +1,271 @@
 <!DOCTYPE html>
-<html lang = "es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name = "description" content="Listado de todas las pistas disponibles">
-        <title>Pistas | AtilanoPadel</title>
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
-        <header class = "header">
-            <div class="container nav">
-                <div class="logo">
-                    <img class = "logo" src = "assets/img/LogoPadel.png">
-                    ATILANOPADEL
-                </div>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtilanoPadel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-                <nav class="menu">
-                    <a class = "menu-item" href="home.html">INICIO</a>
-                    <a class = "menu-item" href="pistas.html">PISTAS</a>
-                    <a class = "menu-item" href="reservas.html">RESERVAS</a>
-                    <a class = "menu-item" href="perfil.html">PERFIL</a>
-                </nav>
-            </div>
-        </header>
-        <main class="container main-content">
-            <section class="hero">
-                <h1>Nuestras Pistas</h1>
-                <p>Elige tus pistas favoritas y reserva en segundos!</p>
-            </section>
-            <section class="container">
-                <div class="pistas-filtros">
-                    <div class="filtro-box">
-                        <label for="fecha">Fecha</label>
-                        <input type="date" id="fecha" name="fecha">
-                    </div>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img class="logo" src="assets/img/LogoPadel.png" alt="Logo AtilanoPadel">
+        ATILANOPADEL
+      </div>
 
-                    <div class="filtro-box">
-                        <label for="hora">Hora</label>
-                        <select id="hora" name="hora">
-                            <option selected>Cualquier hora</option>
-                            <option>08:00</option>
-                            <option>09:00</option>
-                            <option>10:00</option>
-                            <option>11:00</option>
-                            <option>12:00</option>
-                            <option>13:00</option>
-                            <option>14:00</option>
-                            <option>15:00</option>
-                            <option>16:00</option>
-                            <option>17:00</option>
-                            <option>18:00</option>
-                            <option>19:00</option>
-                            <option>20:00</option>
-                            <option>21:00</option>
-                            <option>22:00</option>
-                        </select>
-                    </div>
-                <button class="buscar-btn" type="button">Buscar</button>
-            </div>
+      <nav class="menu">
+        <a class="menu-item" href="home.html">INICIO</a>
+        <a class="menu-item" href="pistas.html">PISTAS</a>
+        <a class="menu-item" href="reservas.html">RESERVAS</a>
+        <a class="menu-item" href="perfil.html">PERFIL</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container reservas-page">
+    <a href="admin.html" class="back-button">← Volver al panel</a>
+
+    <section class="hero">
+      <h1>Gestion de pistas</h1>
+      <p>Consulta todas tus pistas, tanto las activas como las inactivas.</p>
+    </section>
+
+    <div class="gestion-pistas-toolbar">
+      <div class="gestion-pistas-toolbar-left">
+        <section class="reservas-filtros">
+          <input type="text" placeholder="Buscar por ID de pista">
+          <button class="buscar-btn">Buscar</button>
+
+          <button id="btnNuevaPista" class="gestion-pistas-new-btn" style="display: none;">
+            + Nueva pista
+          </button>
+
+          <button id="btnGestionPistas" class="gestion-pistas-new-btn" style="display: none;">
+            Ver gestión pistas
+          </button>
         </section>
+      </div>
+    </div>
 
-            <section class="container pistas-section">
-                <div class="pistas-grid">
+    <section class="gestion-pistas-tabla">
+      <table>
+        <thead>
+          <tr>
+            <th>Pista</th>
+            <th>Ubicacion</th>
+            <th>Precio por hora</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
 
-                    <article class="pista-card">
-                        <div class="pista-badge">Disponible</div>
-                        <img src="assets/img/pistaPadel1.webp">
-                        <div class="pista-body">
-                            <h2>Pista 1</h2>
-                            <p class="pista-club">AtilanoPadel Central</p>
-                            <div class="pista-meta">
-                                <span>Exterior</span>
-                                <span>Cristal panorámico</span>
-                            </div>
-                            <p class="pista-precio"><strong>12,00 €</strong> / hora</p>
-                            <a href="viewPista.html" class="pista-btn">Ver horarios</a>
-                        </div>
-                    </article>
+        <tbody id="tabla-pistas">
+          <tr>
+            <td class="gestion-pistas-info">
+              <img src="assets/img/pistaPadel5.webp" class="gestion-pistas-img" alt="Pista 1">
+              <div class="gestion-pistas-texto">
+                <strong>Pista 1</strong>
+                <span class="gestion-pistas-badge">#1</span>
+              </div>
+            </td>
+            <td>Zona Norte</td>
+            <td>25,00 €</td>
+            <td>
+              <span class="gestion-pistas-estado gestion-pistas-activa">
+                Activa
+              </span>
+            </td>
+            <td>
+              <button class="buscar-btn btn-ver-detalles" data-id="1" style="display: none;">
+                Ver detalles
+              </button>
+            </td>
+          </tr>
 
-                    <article class="pista-card">
-                        <div class="pista-badge">Disponible</div>
-                        <img src="assets/img/pistaPadel2.webp" alt="Pista 2 de pádel">
-                        <div class="pista-body">
-                            <h2>Pista 2</h2>
-                            <p class="pista-club">AtilanoPadel Central</p>
-                            <div class="pista-meta">
-                                <span>Exterior</span>
-                                <span>Cristal panorámico</span>
-                            </div>
-                            <p class="pista-precio"><strong>12,00 €</strong> / hora</p>
-                            <a href="viewPista.html" class="pista-btn">Ver horarios</a>
-                        </div>
-                    </article>
+          <tr>
+            <td class="gestion-pistas-info">
+              <img src="assets/img/pistaPadel3.webp" class="gestion-pistas-img" alt="Pista 2">
+              <div class="gestion-pistas-texto">
+                <strong>Pista 2</strong>
+                <span class="gestion-pistas-badge">#2</span>
+              </div>
+            </td>
+            <td>Zona Norte</td>
+            <td>25,00 €</td>
+            <td>
+              <span class="gestion-pistas-estado gestion-pistas-activa">
+                Activa
+              </span>
+            </td>
+            <td>
+              <button class="buscar-btn btn-ver-detalles" data-id="2" style="display: none;">
+                Ver detalles
+              </button>
+            </td>
+          </tr>
 
-                    <article class="pista-card">
-                        <div class="pista-badge">Disponible</div>
-                        <img src="assets/img/pistaPadel3.webp" alt="Pista 3 de pádel">
-                        <div class="pista-body">
-                            <h2>Pista 3</h2>
-                            <p class="pista-club">AtilanoPadel Central</p>
-                            <div class="pista-meta">
-                                <span>Interior</span>
-                                <span>Cristal panorámico</span>
-                            </div>
-                            <p class="pista-precio"><strong>14,00 €</strong> / hora</p>
-                            <a href="viewPista.html" class="pista-btn">Ver horarios</a>
-                        </div>
-                    </article>
+          <tr>
+            <td class="gestion-pistas-info">
+              <img src="assets/img/pistaPadel1.webp" class="gestion-pistas-img" alt="Pista 3">
+              <div class="gestion-pistas-texto">
+                <strong>Pista 3</strong>
+                <span class="gestion-pistas-badge">#3</span>
+              </div>
+            </td>
+            <td>Zona Sur</td>
+            <td>30,00 €</td>
+            <td>
+              <span class="gestion-pistas-estado gestion-pistas-activa">
+                Activa
+              </span>
+            </td>
+            <td>
+              <button class="buscar-btn btn-ver-detalles" data-id="3" style="display: none;">
+                Ver detalles
+              </button>
+            </td>
+          </tr>
 
-                    <article class="pista-card">
-                        <div class="pista-badge">Disponible</div>
-                        <img src="assets/img/pistaPadel4.webp" alt="Pista 4 de pádel">
-                        <div class="pista-body">
-                            <h2>Pista 4</h2>
-                            <p class="pista-club">AtilanoPadel Central</p>
-                            <div class="pista-meta">
-                                <span>Exterior</span>
-                                <span>Cristal panorámico</span>
-                            </div>
-                            <p class="pista-precio"><strong>14,00 €</strong> / hora</p>
-                            <a href="viewPista.html" class="pista-btn">Ver horarios</a>
-                        </div>
-                    </article>
+          <tr>
+            <td class="gestion-pistas-info">
+              <img src="assets/img/pistaPadel2.webp" class="gestion-pistas-img" alt="Pista 4">
+              <div class="gestion-pistas-texto">
+                <strong>Pista 4</strong>
+                <span class="gestion-pistas-badge">#4</span>
+              </div>
+            </td>
+            <td>Zona Sur</td>
+            <td>30,00 €</td>
+            <td>
+              <span class="gestion-pistas-estado gestion-pistas-activa">
+                Activa
+              </span>
+            </td>
+            <td>
+              <button class="buscar-btn btn-ver-detalles" data-id="4" style="display: none;">
+                Ver detalles
+              </button>
+            </td>
+          </tr>
 
-                    <article class="pista-card">
-                        <div class="pista-badge">Disponible</div>
-                        <img src="assets/img/pistaPadel5.webp" alt="Pista 5 de pádel">
-                        <div class="pista-body">
-                            <h2>Pista 5</h2>
-                            <p class="pista-club">AtilanoPadel Norte</p>
-                            <div class="pista-meta">
-                                <span>Exterior</span>
-                                <span>Cristal panorámico</span>
-                            </div>
-                            <p class="pista-precio"><strong>12,00 €</strong> / hora</p>
-                            <a href="viewPista.html" class="pista-btn">Ver horarios</a>
-                        </div>
-                    </article>
+          <tr>
+            <td class="gestion-pistas-info">
+              <img src="assets/img/pistaPadel5.webp" class="gestion-pistas-img" alt="Pista 5">
+              <div class="gestion-pistas-texto">
+                <strong>Pista 5</strong>
+                <span class="gestion-pistas-badge">#5</span>
+              </div>
+            </td>
+            <td>Zona Centro</td>
+            <td>25,00 €</td>
+            <td>
+              <span class="gestion-pistas-estado gestion-pistas-activa">
+                Activa
+              </span>
+            </td>
+            <td>
+              <button class="buscar-btn btn-ver-detalles" data-id="5" style="display: none;">
+                Ver detalles
+              </button>
+            </td>
+          </tr>
 
-                    <article class="pista-card">
-                        <div class="pista-badge">Disponible</div>
-                        <img src="assets/img/pistaPadel6.webp" alt="Pista 6 de pádel">
-                        <div class="pista-body">
-                            <h2>Pista 6</h2>
-                            <p class="pista-club">AtilanoPadel Norte</p>
-                            <div class="pista-meta">
-                                <span>Exterior</span>
-                                <span>Cristal panorámico</span>
-                            </div>
-                            <p class="pista-precio"><strong>12,00 €</strong> / hora</p>
-                            <a href="viewPista.html" class="pista-btn">Ver horarios</a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
-        <footer class = "footer">
-            <div class = "container footer">
-                <p class="foot-note">Muchas gracias por usar nuestro servicio!</p><br>
-                <p class="foot-note">Si está sufriendo dificultades técnicas y requiere de soporte no dude en contactarnos a través del número:</p><br>
-                <p class = "foot-note"><strong>+34 914586011</strong></p><br>
-                <p class = "foot-note">AtilanoPadel ©</p>
-            </div>
-        </footer>
-    </body>
+          <tr>
+            <td class="gestion-pistas-info">
+              <img src="assets/img/pistaPadel6.webp" class="gestion-pistas-img" alt="Pista 6">
+              <div class="gestion-pistas-texto">
+                <strong>Pista 6</strong>
+                <span class="gestion-pistas-badge">#6</span>
+              </div>
+            </td>
+            <td>Zona Centro</td>
+            <td>25,00 €</td>
+            <td>
+              <span class="gestion-pistas-estado gestion-pistas-inactiva">
+                Inactiva
+              </span>
+            </td>
+            <td>
+              <button class="buscar-btn btn-ver-detalles" data-id="6" style="display: none;">
+                Ver detalles
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="gestion-pistas-info">
+              <img src="assets/img/pistaPadel1.webp" class="gestion-pistas-img" alt="Pista 7">
+              <div class="gestion-pistas-texto">
+                <strong>Pista 7</strong>
+                <span class="gestion-pistas-badge">#7</span>
+              </div>
+            </td>
+            <td>Zona Este</td>
+            <td>28,00 €</td>
+            <td>
+              <span class="gestion-pistas-estado gestion-pistas-activa">
+                Activa
+              </span>
+            </td>
+            <td>
+              <button class="buscar-btn btn-ver-detalles" data-id="7" style="display: none;">
+                Ver detalles
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="gestion-pistas-info">
+              <img src="assets/img/pistaPadel2.webp" class="gestion-pistas-img" alt="Pista 8">
+              <div class="gestion-pistas-texto">
+                <strong>Pista 8</strong>
+                <span class="gestion-pistas-badge">#8</span>
+              </div>
+            </td>
+            <td>Zona Oeste</td>
+            <td>27,00 €</td>
+            <td>
+              <span class="gestion-pistas-estado gestion-pistas-inactiva">
+                Inactiva
+              </span>
+            </td>
+            <td>
+              <button class="buscar-btn btn-ver-detalles" data-id="8" style="display: none;">
+                Ver detalles
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="paginacion">
+      <button id="btn-anterior" class="pag-btn anterior">← Anterior</button>
+      <span id="pagina-actual" class="pag-num active">1</span>
+      <button id="btn-siguiente" class="pag-btn siguiente">Siguiente →</button>
+    </div>
+
+    <div class="gestion-pistas-alerta">
+      <span class="alerta-icono">ℹ</span>
+      <p>
+        Las pistas inactivas no aparecerán en el sistema de reservas.
+        Puedes activarlas en cualquier momento.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer">
+      <p class="foot-note">Muchas gracias por usar nuestro servicio!</p><br>
+      <p class="foot-note">Si está sufriendo dificultades técnicas y requiere de soporte no dude en contactarnos a través del número:</p><br>
+      <p class="foot-note"><strong>+34 914586011</strong></p><br>
+      <p class="foot-note">AtilanoPadel ©</p>
+    </div>
+  </footer>
+
+  <script src="/paginacionPistas.js"></script>
+  <script type="module" src="./adminPistas.js"></script>
+</body>
 </html>
