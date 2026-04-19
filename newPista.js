@@ -116,9 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch("http://localhost:8080/pistaPadel/courts", {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${token}`
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
                 },
-                body: formData
+                body: JSON.stringify(Object.fromEntries(formData))
             });
 
             let data = null;
