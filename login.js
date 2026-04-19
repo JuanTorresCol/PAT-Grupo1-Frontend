@@ -1,3 +1,5 @@
+import { comprobarAdmin } from "./auth";
+
 async function login(email, password) {
     const response = await fetch("http://localhost:8080/pistaPadel/auth/login", {
         method: "POST",
@@ -49,7 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             await login(email, password);
             alert("Inicio de sesión correcto");
-            window.location.href = "pistas.html";
+            if(comprobarAdmin()){
+                window.location.href = "admin.html";
+            }else{window.location.href = "pistas.html";}
         } catch (error) {
             console.error("Error en login:", error);
             alert("Correo o contraseña incorrectos");

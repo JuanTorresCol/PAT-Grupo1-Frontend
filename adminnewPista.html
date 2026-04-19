@@ -50,29 +50,29 @@
                         </div>
 
                         <div class="detalle-pista-img-wrap">
-                            <img src="assets/img/pistaPadel5.webp" alt="Pista 1" class="detalle-pista-img">
-                            <span class="detalle-pista-estado-badge detalle-pista-estado-activa">Activa</span>
+                            <img src="assets/img/pistaPadel5.webp" alt="Pista preview" class="detalle-pista-img" id="previewImagen">
+                            <span class="detalle-pista-estado-badge detalle-pista-estado-activa" id="previewEstadoBadge">Activa</span>
                         </div>
 
                         <div class="detalle-pista-info-list">
                             <div class="detalle-pista-info-item">
                                 <strong>Nombre</strong>
-                                <span class="detalle-pista-label">Sin nombre</span>
+                                <span class="detalle-pista-label" id="previewNombre">Sin nombre</span>
                             </div>
 
                             <div class="detalle-pista-info-item">
                                 <strong>Ubicación</strong>
-                                <span class="detalle-pista-label">Sin ubicación</span>
+                                <span class="detalle-pista-label" id="previewUbicacion">Sin ubicación</span>
                             </div>
 
                             <div class="detalle-pista-info-item">
                                 <strong>Precio por hora</strong>
-                                <span class="detalle-pista-label">0,00€</span>
+                                <span class="detalle-pista-label" id="previewPrecio">0,00€</span>
                             </div>
 
                             <div class="detalle-pista-info-item">
                                 <span class="detalle-pista-label">Estado</span>
-                                <span class="detalle-pista-estado-badge detalle-pista-estado-activa">Activa</span>
+                                <span class="detalle-pista-estado-badge detalle-pista-estado-activa" id="previewEstadoTexto">Activa</span>
                             </div>
                         </div>
                     </div>
@@ -98,6 +98,11 @@
                             <label for="precio">Precio por hora(€)*</label>
                             <input type="text" id="precio" placeholder="Ej: 25,00 €">
                         </div>
+                    </div>
+
+                    <div class="detalle-pista-field">
+                        <label for="fichero">Imagen de la pista</label>
+                        <input type="file" id="fichero" name="fichero" accept="image/png, image/jpeg, image/svg+xml">
                     </div>
 
                     <div class="detalle-pista-field detalle-pista-field-full">
