@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Inicio de sesión correcto");
 
             if (esAdmin) {
-                window.location.href = "adminPistas.html";
+                window.location.href = "admin.html";
             } else {
                 window.location.href = "pistas.html";
             }

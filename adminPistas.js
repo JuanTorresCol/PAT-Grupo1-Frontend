@@ -124,7 +124,7 @@ function normalizarPista(pista, index) {
         id: obtenerIdPista(pista, index),
         nombre: pista.nombre ?? `Pista ${index + 1}`,
         ubicacion: pista.ubicacion ?? "Ubicación no disponible",
-        precio: Number(pista.precio ?? 0),
+        precioHora: pista.precioHora ?? 0,
         activa: obtenerEstadoActivo(pista),
         imagen: obtenerImagenAleatoria()
     };
@@ -224,14 +224,14 @@ function renderizarTabla() {
                 </div>
             </td>
             <td>${escapeHTML(pista.ubicacion)}</td>
-            <td>${formatearPrecio(pista.precio)}</td>
+            <td>${formatearPrecio(pista.precioHora)}</td>
             <td>
                 <span class="gestion-pistas-estado ${pista.activa ? "gestion-pistas-activa" : "gestion-pistas-inactiva"}">
                     ${pista.activa ? "Activa" : "Inactiva"}
                 </span>
             </td>
         `;
-
+        console.log(pista.precioHora);
         tbody.appendChild(fila);
     });
 
