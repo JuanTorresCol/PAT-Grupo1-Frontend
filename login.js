@@ -1,4 +1,6 @@
-import { comprobarAdmin } from "./auth";
+import { comprobarAdmin } from "./auth.js";
+
+const TOKEN_KEY = "token";
 
 async function login(email, password) {
     const response = await fetch("http://localhost:8080/pistaPadel/auth/login", {
@@ -12,19 +14,21 @@ async function login(email, password) {
         })
     });
 
+    const respuestaTexto = await response.text();
+
     if (!response.ok) {
-        throw new Error("Credenciales incorrectas");
+        throw new Error(`Error ${response.status}: ${respuestaTexto}`);
     }
 
-    const token = await response.text();
-    localStorage.setItem("token", token.trim());
+    const token = respuestaTexto.trim();
+    localStorage.setItem(TOKEN_KEY, token);
 
     return token;
 }
 
 function logout() {
-    localStorage.removeItem("token");
-    window.location.href = "/login.html";
+    localStorage.removeItem(TOKEN_KEY);
+    window.location.href = "login.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
 
         const email = inputCorreo.value.trim();
-        const password = inputPassword.value.trim();
+        const password = inputPassword.value; // sin trim
 
         if (!email || !password) {
             alert("Introduce email y contraseña");
@@ -50,13 +54,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             await login(email, password);
+
+            const esAdmin = comprobarAdmin();
+
             alert("Inicio de sesión correcto");
-            if(comprobarAdmin()){
-                window.location.href = "admin.html";
-            }else{window.location.href = "pistas.html";}
+
+            if (esAdmin) {
+                window.location.href = "adminPistas.html";
+            } else {
+                window.location.href = "pistas.html";
+            }
+
         } catch (error) {
-            console.error("Error en login:", error);
-            alert("Correo o contraseña incorrectos");
+            console.error("Error real en login:", error);
+
+            if (error.message.includes("401") || error.message.includes("404")) {
+                alert("Correo o contraseña incorrectos");
+            } else {
+                alert("No se pudo iniciar sesión. Mira la consola para ver el error real.");
+            }
         }
     });
 });

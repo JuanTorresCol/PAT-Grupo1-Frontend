@@ -1,5 +1,7 @@
+const TOKEN_KEY = "token";
+
 export function obtenerToken() {
-    return localStorage.getItem('token');
+    return localStorage.getItem(TOKEN_KEY);
 }
 
 function decodificarToken(token) {
@@ -83,7 +85,6 @@ export function comprobarAdmin() {
     return tieneRol("ADMIN");
 }
 
-
 export function comprobarUsuario() {
-    return (tieneRol("USER")||tieneRol("ADMIN"));
+    return tieneRol("USER") || tieneRol("ADMIN");
 }
