@@ -1,11 +1,11 @@
 import { comprobarAdmin, obtenerToken } from "./auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    /*if (!comprobarAdmin()) {
+    if (!comprobarAdmin()) {
         alert("No tienes permisos de administrador");
         window.location.href = "login.html";
         return;
-    }*/
+    }
 
     const botonGuardar = document.getElementById("guardarPista");
 
