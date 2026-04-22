@@ -2090,3 +2090,67 @@ select{
   background: #f3f4f6;
   color: #6b7280;
 }
+
+
+.badge-disponible {
+  background: #22c55e;
+  color: white;
+}
+
+.badge-no-disponible {
+  background: #ef4444;
+  color: white;
+}
+
+.sin-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  color: #666;
+}
+
+.slot,
+.duration {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.slot {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.slot:disabled {
+  cursor: not-allowed;
+}
+
+.available-slot:hover {
+  background: #dff0e3;
+  border-color: #b7d6be;
+}
+
+.invalid-start-slot {
+  opacity: 0.75;
+}
+
+.selection-box:empty {
+  display: none;
+}
+
+.duration {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.duration:hover {
+  border-color: #0b6b36;
+}
+
+.button[aria-disabled="true"] {
+  opacity: 0.6;
+  pointer-events: none;
+}
