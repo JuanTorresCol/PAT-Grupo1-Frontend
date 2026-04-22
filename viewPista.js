@@ -2,10 +2,6 @@ import { obtenerToken } from "./auth.js";
 
 const API_BASE = "http://localhost:8080";
 
-/*
-  AJUSTA ESTAS DOS RUTAS si en tu backend están expuestas con otra URL exacta.
-  Aquí las dejo separadas para que solo tengas que tocar esto.
-*/
 const ENDPOINT_DETALLE = `${API_BASE}/pistaPadel/courts`;
 const ENDPOINT_DISPONIBILIDAD = `${API_BASE}/pistaPadel/availability`;
 
@@ -128,7 +124,14 @@ function registrarEventosBase() {
       inicio: convertirIndiceATextoHora(estado.slotInicioSeleccionado),
       duracion: String(estado.duracionMinutos)
     });
-
+    localStorage.setItem("reservaPendiente", JSON.stringify({
+      idPista: estado.pista.id,
+      nombrePista: estado.nombrePista,
+      fecha: document.getElementById("fecha").value, 
+      precio: document.getElementById("resumenPrecio").textContent,
+      duracion: document.getElementById("resumenDuracion").textContent,
+      hora: document.getElementById("resumenInicio").textContent
+    }));
     botonConfirmar.href = `reservaConfirmada.html?${params.toString()}`;
   });
 }

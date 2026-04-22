@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const infoPrecio = document.getElementById("info-precio");
   const infoTitulo = document.getElementById("info-nombre-titulo");
     
-  function pintarPistaEnPantalla(pista) {
+  function pintarPistaEnPantalla() {
       infoNombre.textContent = localStorage.getItem("nombrePista");
       infoUbicacion.textContent = localStorage.getItem("ubicacion");
       infoTitulo.textContent = localStorage.getItem("nombrePista");
