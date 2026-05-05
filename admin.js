@@ -1,9 +1,10 @@
+import { logout } from "./auth.js";
 document.addEventListener("DOMContentLoaded", () => {
   const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
 
   if (btnCerrarSesion) {
     btnCerrarSesion.addEventListener("click", () => {
-      localStorage.clear();
+      logout();
       window.location.href = "home.html";
     });
   }

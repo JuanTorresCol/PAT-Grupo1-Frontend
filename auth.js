@@ -88,3 +88,9 @@ export function comprobarAdmin() {
 export function comprobarUsuario() {
     return tieneRol("USER") || tieneRol("ADMIN");
 }
+
+export function logout() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("rol");
+  localStorage.removeItem("usuario");
+}
