@@ -365,7 +365,7 @@ img {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 12px 14px;
-  min-width: 220px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -383,7 +383,6 @@ img {
   outline: none;
   background: transparent;
   color: #6b7280;
-  font-size: 0.95rem;
 }
 
 .buscar-btn {
@@ -574,7 +573,7 @@ img {
   background: #0b6b36;;
   color: white;
   padding: 12px 18px;
-  border-radius: 8px;
+  border-radius: 14px;
   font-weight: bold;
 }
 
@@ -586,7 +585,7 @@ img {
   background: white;
   border: 1px solid #ddd;
   padding: 12px 18px;
-  border-radius: 8px;
+  border-radius: 14px;
   font-weight: bold;
 }
 
@@ -664,6 +663,24 @@ img {
   .hero h1 {
     font-size: 2rem;
   }
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+
+  background: #ffffff;
+  border: 1px solid;
+  border-radius: 14px;
+
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background: #f4f4f4;
 }
 
 
@@ -952,6 +969,15 @@ img {
   margin-top: 24px;
   flex-wrap: wrap;
 }
+.detalle-field input[type="date"] {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid #d8dee8;
+  border-radius: 14px;
+  font-family: inherit;
+  font-weight: 600;
+}
 
 .primary-btn,
 .secondary-btn,
@@ -987,14 +1013,20 @@ img {
 }
 
 .danger-btn {
-  background: white;
-  color: #dc2626;
-  border-color: #fecaca;
+  background: #dc2626;
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .danger-btn:hover {
-  background: #fef2f2;
+  background: #b91c1c;
+  border-color: #fecaca;
 }
+
 
 @media (max-width: 900px) {
   .detalle-layout {

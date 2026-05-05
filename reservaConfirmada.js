@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const infoPrecio = document.getElementById("precioReserva");
     
   function pintarPistaEnPantalla(pista) {
-    const reserva = JSON.parse(localStorage.getItem("reservaPendiente"));
+    const reserva = JSON.parse(localStorage.getItem("reservaConfirmada"));
     console.log(reserva);
-      infoNum.textContent = reserva.idPista;
-      infoFecha.textContent = formatearFecha(reserva.fecha);
-      infoHora.textContent = formatearHora(reserva.hora, reserva.duracion);
-      infoPista.textContent = reserva.nombrePista;
-      infoPrecio.textContent = formatearPrecio(reserva.precio);
+      infoNum.textContent = "#" + (reserva.id || reserva.idReserva);
+      infoFecha.textContent = formatearFecha(reserva.date);
+      infoHora.textContent = formatearHora(reserva.startTime.substring(0, 5), `${reserva.durationMins} minutos`);
+      infoPista.textContent = reserva.pista.nombre;
+      infoPrecio.textContent = formatearPrecio(reserva.pista.precioHora);
   }
 
   function formatearHora(hora, duracion) {
@@ -34,4 +34,3 @@ document.addEventListener("DOMContentLoaded", async () => {
   pintarPistaEnPantalla();
   
 });
-

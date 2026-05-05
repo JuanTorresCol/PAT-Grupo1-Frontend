@@ -111,10 +111,19 @@ function registrarEventosBase() {
     });
   });
 
-  botonConfirmar.addEventListener("click", (event) => {
+  botonConfirmar.addEventListener("click", async (event) => {
+    event.preventDefault();
+
     if (estado.slotInicioSeleccionado === null) {
-      event.preventDefault();
       alert("Selecciona una hora de inicio antes de confirmar la reserva");
+      return;
+    }
+
+    const token = obtenerToken();
+
+    if (!token) {
+      alert("No has iniciado sesión");
+      window.location.href = "login.html";
       return;
     }
 
@@ -124,15 +133,54 @@ function registrarEventosBase() {
       inicio: convertirIndiceATextoHora(estado.slotInicioSeleccionado),
       duracion: String(estado.duracionMinutos)
     });
-    localStorage.setItem("reservaPendiente", JSON.stringify({
-      idPista: estado.pista.id,
-      nombrePista: estado.nombrePista,
-      fecha: document.getElementById("fecha").value, 
-      precio: document.getElementById("resumenPrecio").textContent,
-      duracion: document.getElementById("resumenDuracion").textContent,
-      hora: document.getElementById("resumenInicio").textContent
-    }));
-    botonConfirmar.href = `reservaConfirmada.html?${params.toString()}`;
+
+    const nuevaReserva = {
+      courtId: estado.pista.idPista,
+      date: document.getElementById("fecha").value,
+      startTime: convertirIndiceATextoHora(estado.slotInicioSeleccionado),
+      durationMins: estado.duracionMinutos
+    };
+
+    try {
+      const response = await fetch(`${API_BASE}/pistaPadel/reservations`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(nuevaReserva)
+      });
+
+      if (!response.ok) {
+        if (response.status === 409) {
+          alert("Ese horario ya está ocupado");
+          return;
+        }
+
+        if (response.status === 400) {
+          alert("La reserva no es válida. Revisa la fecha, hora o duración.");
+          return;
+        }
+
+        if (response.status === 401 || response.status === 403) {
+          alert("No tienes autorización. Inicia sesión de nuevo.");
+          window.location.href = "login.html";
+          return;
+        }
+
+        throw new Error("No se pudo crear la reserva");
+      }
+
+      const reservaConfirmada = await response.json();
+
+      localStorage.setItem("reservaConfirmada", JSON.stringify(reservaConfirmada));
+
+      window.location.href = `reservaConfirmada.html?${params.toString()}`;
+
+    } catch (error) {
+      console.error(error);
+      alert("Error al confirmar la reserva");
+    }
   });
 }
 
@@ -186,9 +234,11 @@ async function cargarDisponibilidad(token) {
     return;
   }
 
-  const url = new URL(ENDPOINT_DISPONIBILIDAD);
+  const url = new URL(
+    `${API_BASE}/pistaPadel/courts/${encodeURIComponent(estado.nombrePista)}/availability`
+  );
+
   url.searchParams.append("date", fecha);
-  url.searchParams.append("nombre", estado.nombrePista);
 
   const response = await fetch(url.toString(), {
     method: "GET",
@@ -210,16 +260,18 @@ async function cargarDisponibilidad(token) {
     throw new Error(`Error al cargar disponibilidad: ${response.status}`);
   }
 
-  const disponibilidad = [];
-  for(let i = HORA_INICIO; i < HORA_FIN*2-7; i += 1) {
-    disponibilidad.push(true);
-  }
+  const disponibilidadBackend = await response.json();
+  console.log("Disponibilidad backend:", disponibilidadBackend);
 
-  if (!Array.isArray(disponibilidad)) {
+  if (!Array.isArray(disponibilidadBackend)) {
     throw new Error("La disponibilidad recibida no tiene un formato válido");
   }
 
-  estado.disponibilidad = disponibilidad;
+  // Backend: false = disponible, true = ocupada
+  // Frontend: true = disponible, false = ocupada
+  estado.disponibilidad = disponibilidadBackend.map(ocupada => !ocupada);
+  console.log("Disponibilidad frontend:", estado.disponibilidad);
+
   estado.slotInicioSeleccionado = null;
 
   renderizarGrid();

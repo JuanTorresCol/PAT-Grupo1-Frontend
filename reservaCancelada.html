@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserva cancelada | AtilanoPadel</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="./reservaCancelada.js"></script>
 </head>
 <body>
 
@@ -15,7 +16,7 @@
         ATILANOPADEL
       </div>
 
-      <nav class="menu">
+      <nav id="menu-principal" class="menu">
         <a class="menu-item" href="home.html">INICIO</a>
         <a class="menu-item" href="pistas.html">PISTAS</a>
         <a class="menu-item" href="reservas.html">RESERVAS</a>
@@ -37,7 +38,7 @@
 
       <div class="result-id-box">
         <span>ID de reserva</span>
-        <strong>#1248</strong>
+        <strong id="numReserva">-</strong>
       </div>
 
       <section class="card result-card">
@@ -45,22 +46,22 @@
 
         <div class="result-row">
           <span>Fecha</span>
-          <strong>12 junio 2026</strong>
+          <strong id="fechaReserva">-</strong>
         </div>
 
         <div class="result-row">
           <span>Hora</span>
-          <strong>18:00 (90 min)</strong>
+          <strong id="horaReserva">-</strong>
         </div>
 
         <div class="result-row">
           <span>Pista</span>
-          <strong>Pista 1</strong>
+          <strong id="pistaReserva">-</strong>
         </div>
 
         <div class="result-row">
           <span>Estado</span>
-          <span class="estado cancelada">Cancelada</span>
+          <span id="estadoReserva" class="estado cancelada">Cancelada</span>
         </div>
       </section>
 
@@ -69,8 +70,7 @@
       </div>
 
       <div class="result-actions">
-        <a href="reservas.html" class="primary-btn">Ver mis reservas</a>
-        <a href="pistas.html" class="outline-btn">Volver a pistas</a>
+        <a href="reservas.html" id="volver-listado-reservas" class="primary-btn">Volver a reservas</a>
       </div>
     </section>
 

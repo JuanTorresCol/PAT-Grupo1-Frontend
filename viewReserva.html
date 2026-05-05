@@ -15,7 +15,7 @@
         ATILANOPADEL
       </div>
 
-      <nav class="menu">
+      <nav id="menu-principal" class="menu">
         <a class="menu-item" href="home.html">INICIO</a>
         <a class="menu-item" href="pistas.html">PISTAS</a>
         <a class="menu-item" href="reservas.html">RESERVAS</a>
@@ -26,126 +26,124 @@
 
   <main class="container main-content">
 
-  <a href="reservas.html" class="back-button">← Volver a reservas</a>
-
-  <section class="hero">
-    <h1>Detalle de reserva #1248</h1>
-    <p>Consulta y gestiona la información de la reserva.</p>
-  </section>
-
-  <section class="detalle-layout">
-
-    <aside class="card detalle-sidebar">
-      <div class="detalle-badge">
-        <span class="estado confirmada">Confirmada</span>
-      </div>
-
-      <div class="detalle-lista">
-        <div class="detalle-item">
-          <span class="detalle-label">ID de reserva</span>
-          <span class="detalle-value">#1248</span>
-        </div>
-
-        <div class="detalle-item">
-          <span class="detalle-label">Usuario</span>
-          <div class="detalle-value-block">
-            <strong>Juan Pérez</strong>
-            <small>juan.perez@email.com</small>
-          </div>
-        </div>
-
-        <div class="detalle-item">
-          <span class="detalle-label">Pista</span>
-          <div class="detalle-value-block">
-            <strong>Pista 1</strong>
-            <small>Zona Norte</small>
-          </div>
-        </div>
-
-        <div class="detalle-item">
-          <span class="detalle-label">Fecha</span>
-          <span class="detalle-value">12/06/2026</span>
-        </div>
-
-        <div class="detalle-item">
-          <span class="detalle-label">Hora de inicio</span>
-          <span class="detalle-value">18:00</span>
-        </div>
-
-        <div class="detalle-item">
-          <span class="detalle-label">Duración</span>
-          <span class="detalle-value">90 minutos</span>
-        </div>
-
-
-        <div class="detalle-item">
-          <span class="detalle-label">Creada el</span>
-          <span class="detalle-value">05/06/2026 11:30</span>
-        </div>
-      </div>
-    </aside>
-
-    <section class="card detalle-form-card">
-      <div class="detalle-form-header">
-        <h2>Información de la reserva</h2>
-      </div>
-
-      <div class="detalle-form-grid">
-
-        <div class="detalle-field">
-          <label>Usuario</label>
-          <div class="fake-input">Juan Pérez</div>
-        </div>
-
-        <div class="detalle-field">
-          <label>Email</label>
-          <div class="fake-input">juan.perez@email.com</div>
-        </div>
-
-        <div class="detalle-field">
-          <label>Pista</label>
-          <div class="fake-input">Pista 1</div>
-        </div>
-
-        <div class="detalle-field">
-          <label>Fecha</label>
-          <div class="fake-input">12/06/2026</div>
-        </div>
-
-        <div class="detalle-field">
-          <label>Hora de inicio</label>
-          <div class="fake-input">18:00</div>
-        </div>
-
-        <div class="detalle-field">
-          <label>Duración</label>
-          <div class="fake-input">90 minutos</div>
-        </div>
-
-        <div class="detalle-field">
-          <label>Estado</label>
-          <div class="fake-input">Confirmada</div>
-        </div>
-
-
-      </div>
-
-      <div class="detalle-field detalle-field-full">
-        <label>Notas (opcional)</label>
-        <textarea class="detalle-textarea" placeholder="Añade notas sobre esta reserva..."></textarea>
-        <div class="contador-notas">0/300</div>
-      </div>
-
-      <div class="detalle-actions">
-       <a href="reservaCancelada.html" class="danger-btn">Cancelar reserva</a>
-        <a href="reservas.html" class="secondary-btn">Cancelar</a>
-        <a href="reservas.html" class="primary-btn">Guardar cambios</a>
-      </div>
+    <section class="hero">
+      <h1 id="titulo-detalle">Detalle de reserva</h1>
+      <p id="breadcrumb-reserva">Consulta y gestiona la información de la reserva.</p>
     </section>
 
-  </section>
+    <section class="detalle-layout">
 
-</main>
+      <aside class="card detalle-sidebar">
+        <div class="detalle-badge">
+          <span id="badge-estado-lateral" class="estado confirmada">Confirmada</span>
+        </div>
+
+        <div class="detalle-lista">
+
+          <div class="detalle-item">
+            <span class="detalle-label">ID de reserva</span>
+            <span id="info-id" class="detalle-value">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Usuario</span>
+            <div class="detalle-value-block">
+              <strong id="info-usuario">-</strong>
+              <small id="info-email">-</small>
+            </div>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Pista</span>
+            <div class="detalle-value-block">
+              <strong id="info-pista">-</strong>
+              <small id="info-ubicacion">-</small>
+            </div>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Fecha</span>
+            <span id="info-fecha" class="detalle-value">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Horario</span>
+            <span id="info-hora" class="detalle-value">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Duración</span>
+            <span id="info-duracion" class="detalle-value">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Creada el</span>
+            <span id="info-creada" class="detalle-value">-</span>
+          </div>
+
+        </div>
+      </aside>
+
+      <section class="card detalle-form-card">
+        <div class="detalle-form-header">
+          <h2>Modificar reserva</h2>
+        </div>
+
+        <div class="detalle-form-grid">
+
+          <div class="detalle-field">
+            <label for="fecha">Fecha</label>
+            <input id="fecha" type="date">
+          </div>
+
+          <div class="detalle-field">
+            <label for="hora">Hora de inicio</label>
+            <select id="hora">
+              <option value="08:00">08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="20:00">20:00</option>
+              <option value="21:00">21:00</option>
+            </select>
+          </div>
+
+          <div class="detalle-field">
+            <label for="duracion">Duración</label>
+            <select id="duracion">
+              <option value="30">30 minutos</option>
+              <option value="60">60 minutos</option>
+              <option value="90">90 minutos</option>
+              <option value="120">120 minutos</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="detalle-field detalle-field-full">
+          <p class="detalle-label">Resumen del cambio</p>
+          <div id="resumenCambio" class="fake-input">
+            Selecciona una nueva fecha, hora o duración.
+          </div>
+        </div>
+
+        <div class="detalle-actions">
+          <button type="button" class="danger-btn" style="display: none;">Cancelar reserva</button>
+          <button type="button" class="secondary-btn">Volver</button>
+          <button type="button" class="primary-btn" style="display: none;">Guardar cambios</button>
+        </div>
+      </section>
+
+    </section>
+
+  </main>
 
   <footer class="footer">
     <div class="container footer">
@@ -156,5 +154,6 @@
     </div>
   </footer>
 
+  <script type="module" src="./viewReserva.js"></script>
 </body>
 </html>
