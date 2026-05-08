@@ -119,13 +119,10 @@ function normalizarReserva(reserva) {
     };
 }
 
+//
 function obtenerIdReserva(reserva) {
     if (reserva.id !== undefined && reserva.id !== null) {
         return String(reserva.id);
-    }
-
-    if (reserva.idReserva !== undefined && reserva.idReserva !== null) {
-        return String(reserva.idReserva);
     }
 
     return "";
@@ -205,7 +202,7 @@ function renderizarTabla() {
                 ${escapeHTML(reserva.duracion)} min
             </td>
             <td>
-                <span class="gestion-pistas-estado ${obtenerClaseEstado(reserva.estado)}">
+                <span class="estado ${obtenerClaseEstado(reserva.estado)}">
                     ${formatearEstado(reserva.estado)}
                 </span>
             </td>
@@ -284,7 +281,7 @@ function formatearEstado(estado) {
 
     return estado;
 }
-
+//obtener el nombre de la clase para el estilo css
 function obtenerClaseEstado(estado) {
     if (estado === "CONFIRMADA") {
         return "confirmada";
