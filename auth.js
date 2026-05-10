@@ -48,12 +48,12 @@ function extraerRoles(payload) {
         return [payload.role];
     }
 
-    if (Array.isArray(payload.roles)) {
+    if (Array.isArray(payload.roles)) { //array.isArray comprueba sitiene varios roles en forma array
         return payload.roles;
     }
 
     if (Array.isArray(payload.authorities)) {
-        return payload.authorities.map(r => r.replace("ROLE_", ""));
+        return payload.authorities.map(r => r.replace("ROLE_", "")); //mismo en formato authorities, quitamos el prefijo ROLE_ si existe
     }
 
     return [];

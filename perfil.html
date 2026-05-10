@@ -36,20 +36,21 @@
     <aside class="card detalle-sidebar">
 
       <div class="perfil">
-        <div class="icon perfil"> MG</div>
-        <strong>Maria García</strong>
+        <div class="icon perfil" id="inicialesUsuario">--</div>
+
+        <strong id="nombreCompletoUsuario">Cargando...</strong>
+
         <div class="detalle-badge">
-          <span class="user usuario">Usuario</span>
+          <span class="user usuario" id="tipoUsuario">Usuario</span>
         </div>
       </div>
       
       <div class="detalle-lista">
-        
 
         <div class="detalle-item">
           <div class="detalle-value-block">
             <strong>Email</strong>
-            <small>maria.garcia@email.com</small>
+            <small id="emailUsuario">maria.garcia@email.com</small>
           </div>
         </div>
 
@@ -57,7 +58,7 @@
           
           <div class="detalle-value-block">
             <strong>Teléfono</strong>
-            <small>+34 600 123 456</small>
+            <small id="telefonoUsuario">+34 600 123 456</small>
           </div>
         </div>
 
@@ -65,24 +66,18 @@
           
           <div class="detalle-value-block">
             <strong>Fecha de registro</strong>
-            <small>13/04/2026</small>
+            <small id="fechaRegistroUsuario">13/04/2026</small>
           </div>
         </div>
 
         <div class="detalle-item">
-          
           <div class="detalle-value-block">
             <strong>Estado</strong>
             <div class="estado-info-box">
-              Activo
+              <span id="estadoUsuario">Activo</span>
             </div>
           </div>
         </div>
-
-        
-
-        
-      </div>
     </aside>
 
     <section class="card detalle-form-card">
@@ -94,37 +89,32 @@
 
         <div class="detalle-field">
           <label>Nombre</label>
-          <div class="fake-input">María</div>
+          <input class="fake-input" id = "nombreUsuario" type="text" value="Nombre">
         </div>
 
         <div class="detalle-field">
           <label>Apellidos</label>
-          <div class="fake-input">García</div>
+          <input class="fake-input" id = "apellidosUsuario" type="text" value="Apellidos">
         </div>
 
         <div class="detalle-field">
           <label>Email</label>
-          <div class="fake-input">maria.garcia@email.com</div>
+          <input class="fake-input" id = "emailUsuarioForm" type="email" value="correo@email.com">
         </div>
 
         <div class="detalle-field">
           <label>Teléfono</label>
-          <div class="fake-input">+34 600 123 456</div>
+          <input class="fake-input" id="telefonoUsuarioForm" type="tel" value="+34 666 666 666">
         </div>
 
 
         <div class="detalle-field">
           <label>Estado de la cuenta</label>
-          <select name="estado">
-                <option value="es">Activo</option>
-                <option value="fr">Inactivo</option>
+          <select id="estadoSelect" name="estado">
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
           </select>
         </div>
-
-        
-
-        
-
 
       </div>
 
@@ -135,7 +125,9 @@
       <div class="detalle-actions">
        <a href="home.html" class="danger-btn">Cerrar sesión</a>
         <a href="usuarios.html" class="secondary-btn">Cancelar</a>
-        <a href="usuarios.html" class="primary-btn">Guardar cambios</a>
+        <button type="button" class="primary-btn" id="guardarBtn">
+          Guardar cambios
+        </button>
       </div>
     </section>
 
@@ -152,5 +144,6 @@
     </div>
   </footer>
 
+<script type="module" src="./perfil.js"></script>
 </body>
 </html>

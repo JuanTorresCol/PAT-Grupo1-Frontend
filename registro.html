@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro | AtilanoPadel</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="./registro.js"></script>
 </head>
 <body>
 
@@ -37,10 +38,10 @@
 
         <div class="form-row">
             <div>
-                <input type="text" placeholder="Tu nombre">
+                <input type="text" id="nombre" placeholder="Tu nombre">
             </div>
             <div>
-                <input type="text" placeholder="Tus apellidos">
+                <input type="text" id="apellidos" placeholder="Tus apellidos">
             </div>
         </div>      
 
@@ -60,10 +61,10 @@
 
         <div class="form-row">
             <div>
-                <input type="password" placeholder="Crea una contraseña">
+                <input type="password" id="password" placeholder="Crea una contraseña">
             </div>
             <div>
-                <input type="password" placeholder="Confirma tu contraseña">
+                <input type="password" id="passwordRepeated" placeholder="Confirma tu contraseña">
             </div>
         </div>
 
@@ -87,7 +88,7 @@
             
 
         <div class="result-actions">
-            <a href="pistas.html" class="pista-btn">Crear cuenta</a>
+            <button id="guardarBtn" class="pista-btn">Crear cuenta</button>
             <p class="result-subtitle">
                 ¿Ya tienes cuenta con AtilanoPadel?
                 <a href="login.html" class="linked-text">
