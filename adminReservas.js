@@ -237,7 +237,7 @@ function renderizarTabla() {
             <td>${formatearHora(reserva.horaInicio)} - ${formatearHora(reserva.horaFin)}</td>
             <td>${escapeHTML(reserva.duracion)} min</td>
             <td>
-                <span class="gestion-pistas-estado ${obtenerClaseEstado(reserva.estado)}">
+                <span class="estado ${obtenerClaseEstado(reserva.estado)}">
                     ${formatearEstado(reserva.estado)}
                 </span>
             </td>
