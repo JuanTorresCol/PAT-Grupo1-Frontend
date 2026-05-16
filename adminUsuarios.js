@@ -83,6 +83,7 @@ function inicializarEventos() {
 
 async function cargarUsuarios(token) {
 
+    
     try {
         const response = await fetch(`${API_BASE}/pistaPadel/users`, {
             method: "GET",
@@ -101,6 +102,8 @@ async function cargarUsuarios(token) {
         }
 
         const usuarios = await response.json();
+
+        
 
         if (!Array.isArray(usuarios)) {
             throw new Error("La respuesta del servidor no es una lista de usuarios");
@@ -132,8 +135,7 @@ function normalizarUsuario(user) {
 }
 
 function obtenerIdUsuario(user) {
-    if (user.id !== undefined && user.id !== null) return String(user.id);
-    if (user.userId !== undefined && user.userId !== null) return String(user.userId);
+    if (user.idUsuario !== undefined && user.idUsuario !== null) return String(user.idUsuario);
     return "";
 }
 

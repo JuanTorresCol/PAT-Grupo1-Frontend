@@ -7,7 +7,21 @@ const TOKEN_KEY = "token";
 document.addEventListener("DOMContentLoaded", () => {
     const crearCuentaBtn = document.getElementById("guardarBtn");
     crearCuentaBtn.addEventListener("click", crearCuenta);
+
+    const checkboxVerPassword = document.getElementById("verPassword");
+    const inputPassword = document.getElementById("password");
+    const inputPasswordRpt = document.getElementById("passwordRepeated");
+
+    checkboxVerPassword.addEventListener("change", () => {
+        inputPassword.type = checkboxVerPassword.checked ? "text" : "password";
+        inputPasswordRpt.type = checkboxVerPassword.checked ? "text" : "password";
+    });
+
+
+
 });
+
+
 
 async function crearCuenta(event) {
     event.preventDefault();

@@ -1,38 +1,203 @@
-import { obtenerToken } from "./auth.js";
+import { comprobarAdmin, logout, obtenerToken } from "./auth.js";
+import { cargarNavegacion } from "./home.js";
 
 const API_BASE = "http://localhost:8080";
 
 const TEXTO_NO_DISPONIBLE = "No disponible";
 
 document.addEventListener("DOMContentLoaded", () => {
+    cargarNavegacion();
     cargarPerfil();
+    const esAdmin = comprobarAdmin();
 
     const guardarBtn = document.getElementById("guardarBtn");
-    guardarBtn.addEventListener("click", guardarCambios);
+    const cancelarBtn = document.getElementById("cancelarBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
 
-    // const logoutBtn = document.getElementById("logoutBtn");
-    // logoutBtn.addEventListener("click", cerrarSesion);
+    if (esAdmin){
+        logoutBtn.remove();
+        guardarBtn.addEventListener("click", guardarCambiosAdmin);
+    }else{
+        guardarBtn.addEventListener("click", guardarCambios);
+    }
+    
+    cancelarBtn.addEventListener("click", cancelar);
+
+    if (logoutBtn) {        
+    logoutBtn.addEventListener("click", cerrarSesion);
+    }
+
 });
+
+async function cerrarSesion() {
+    logout();
+}
+
+async function cancelar(){
+    const token = obtenerToken();
+    const esAdmin = comprobarAdmin();
+
+    if (!token) {
+        redirigirALogin("No has iniciado sesión");
+        return;
+    }else{
+        if (esAdmin) {
+                window.location.href = "adminUsuarios.html";
+            } else {
+                window.location.href = "pistas.html";
+            }
+    }
+}
+
+function obtenerIdDeURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id");
+}
 
 async function cargarPerfil() {
     const token = obtenerToken();
+    console.log("URL completa:", window.location.href);
+    console.log("Params:", window.location.search);
+    console.log("ID:", obtenerIdDeURL());
 
     if (!token) {
         redirigirALogin("No has iniciado sesión");
         return;
     }
 
+    const id = obtenerIdDeURL();
+    const esAdmin = comprobarAdmin();
+
+
     try {
-        const userInfo = await obtenerPerfilUsuario(token);
+        let userInfo;
+
+        if (esAdmin && id) {
+            
+            userInfo = await obtenerUsuarioPorId(id, token);
+        } else {
+            userInfo = await obtenerPerfilUsuario(token);
+        }
 
         pintarResumenPerfil(userInfo);
         pintarDetallesPerfil(userInfo);
+        
 
     } catch (error) {
         console.error("Error cargando perfil:", error);
         redirigirALogin("Error al obtener información del usuario");
     }
 }
+
+async function obtenerUsuarioPorId(id, token) {
+    const response = await fetch(`${API_BASE}/pistaPadel/users/${id}`, {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    });
+
+    if (!response.ok) {
+        if (response.status === 401) {
+            throw new Error("No autorizado");
+        }
+        if (response.status === 403) {
+            throw new Error("No tienes permisos de administrador");
+        }
+        if (response.status === 404) {
+            throw new Error("Usuario no encontrado");
+        }
+
+        throw new Error(`Error HTTP ${response.status}`);
+    }
+
+    return await response.json();
+
+}
+
+
+async function guardarCambiosAdmin(event) {
+    event.preventDefault();
+    const token = obtenerToken();
+    const esAdmin = comprobarAdmin();
+
+    if (!token) {
+        redirigirALogin("No has iniciado sesión");
+        return;
+    }
+
+    const id = obtenerIdDeURL(); 
+
+    if (!id && esAdmin) {
+        alert("Falta el ID del usuario a modificar");
+        return;
+    }
+
+    let activo;
+
+    if (esAdmin) {
+        activo = document.getElementById("estadoSelect").value;
+    } else {
+        activo = true;
+    }
+
+    const userPatchRequest = {
+        email: document.getElementById("emailUsuarioForm").value,
+        nombre: document.getElementById("nombreUsuario").value,
+        apellidos: document.getElementById("apellidosUsuario").value,
+        telefono: document.getElementById("telefonoUsuarioForm").value,
+        active: activo
+    };
+
+    try {
+
+        const url = esAdmin
+            ? `${API_BASE}/pistaPadel/users/${id}`
+            : `${API_BASE}/pistaPadel/users/me`; // opcional si lo tienes
+
+        const responsePatch = await fetch(url, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(userPatchRequest)
+        });
+
+        if (!responsePatch.ok) {
+            if (responsePatch.status === 401) {
+                redirigirALogin("Sesión caducada o no válida");
+                return;
+            }
+
+            if (responsePatch.status === 403) {
+                alert("No tienes permisos para modificar este usuario");
+                return;
+            }
+
+            if (responsePatch.status === 409) {
+                alert("Email ya en uso");
+                return;
+            }
+
+            throw new Error(`Error HTTP ${responsePatch.status}`);
+        }
+
+        alert("Perfil actualizado correctamente");
+
+        if (esAdmin) {
+            window.location.href = "adminUsuarios.html";
+        } else {
+            window.location.href = "perfil.html";
+        }
+
+    } catch (error) {
+        console.error("Error al guardar cambios:", error);
+        alert("No se pudieron guardar los cambios");
+    }
+
+}
+
 
 async function obtenerPerfilUsuario(token) {
     const response = await fetch(`${API_BASE}/pistaPadel/auth/me`, {
@@ -49,22 +214,33 @@ async function obtenerPerfilUsuario(token) {
     return await response.json();
 }
 
+
+
+
 async function guardarCambios(event) {
     event.preventDefault(); //que no se vaya directamente al link asociado al bton, se fuerza ava script
 
     const token = obtenerToken();
+    const esAdmin = comprobarAdmin();
 
     if (!token) {
         redirigirALogin("No has iniciado sesión");
         return;
     }
 
+    let activo;
+
+    if (esAdmin){
+        activo = document.getElementById("estadoSelect").value;
+    }else{
+        activo = true;
+    }
     const userPatchRequest = { //objeto JS, hay que convertirlo a json
         email: document.getElementById("emailUsuarioForm").value,
         nombre: document.getElementById("nombreUsuario").value,
         apellidos: document.getElementById("apellidosUsuario").value,
         telefono: document.getElementById("telefonoUsuarioForm").value,
-        active: document.getElementById("estadoSelect").value === "true"
+        active: activo
     };
 
     try {
@@ -93,7 +269,12 @@ async function guardarCambios(event) {
         }
 
         alert("Perfil actualizado correctamente");
-        window.location.href = "home.html";
+
+        if (esAdmin) {
+                window.location.href = "adminUsuarios.html";
+        } else {
+                window.location.href = "perfil.html";
+        }
 
     } catch (error) {
         console.error("Error al guardar cambios:", error);

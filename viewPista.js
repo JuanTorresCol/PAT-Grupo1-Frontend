@@ -162,9 +162,14 @@ function registrarEventosBase() {
           return;
         }
 
-        if (response.status === 401 || response.status === 403) {
+        if (response.status === 401){
           alert("No tienes autorización. Inicia sesión de nuevo.");
           window.location.href = "login.html";
+          return;
+        }
+        if (response.status === 403) {
+          alert("Su cuenta está inactiva. Contacte con atención al cliente.");
+          window.location.href = "pistas.html";
           return;
         }
 
